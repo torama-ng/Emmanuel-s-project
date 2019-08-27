@@ -1,0 +1,32 @@
+
+.shadow-sm{
+    height:80px;
+}
+.account{
+   background-color: gray; 
+}
+.quote{
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(100, 120, 115);
+}
+.quote h2{
+    font-size: 50px;
+    font-weight:1000;
+}
+.rounded{
+   margin-bottom: 20px;
+}
+.img-decor-bg {
+background-color: #00b6b4;
+margin: auto;
+top: -15px;
+bottom: 0;
+right: 15px;
+}
+.search-style{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+
+}

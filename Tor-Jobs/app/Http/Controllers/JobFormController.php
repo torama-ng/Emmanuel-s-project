@@ -152,7 +152,7 @@ class JobFormController extends Controller
                         ->where('location', 'like', '%'.$location.'%')
                         ->paginate(5);
 
-       return view('jobform.index', ['jobs' => $jobs]);       
+       return view('pages.searchresult', ['jobs' => $jobs]);       
 
     }
 }
