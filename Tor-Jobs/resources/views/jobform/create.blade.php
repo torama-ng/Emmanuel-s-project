@@ -2,43 +2,39 @@
 
 @section('content')
     <h1 class="create-title">Job-Form</h3>
-    <div class="container">
-        {{ Form::open(array('action'=> 'JobFormController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data')) }}
-          <div class="form-row">  
-        <div class="form-group col-md-6">
-                {{Form::label('jobtitle','JobTitle')}}
-                {{Form::text('Jobtitle','',array('class'=>'form-control','placeholder'=>'Title'))}}
-            </div>
-            <div class="form-group col-md-6">
-                {{Form::label('companyname','Company Name')}}
-                {{Form::text('body','',array('class'  => 'form-control', 'placeholder' => 'Company Name'))}}
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group  col-md-6">
-                {{Form::label('location','Location')}}
-                {{Form::text('body','',array('class'  => 'form-control', 'placeholder' => 'Body text'))}}
-            </div>
-            <div class="form-group  col-md-6">
-                {{Form::label('schedule','Schedule')}}
-                {{Form::text('body','',array('class'  => 'form-control', 'placeholder' => 'Body text'))}}
-            </div>
-        </div>
-            <div class="form-group">
-                {{Form::label('requirements','Experience')}}
-                {{Form::text('body','',array('class'  => 'form-control', 'placeholder' => 'Body text'))}}
-            </div>
-            <div class="form-group">
-                {{Form::label('description','Job description')}}
-                {{Form::textarea('body','',array('class'  => 'form-control', 'placeholder' => 'Body text'))}}
-            </div>
-            <div class="form-group">
-                {{Form::label('image upload','image')}}
-                {{ Form::file('cover_image')}}
-                
-            </div>
-            {{Form::Submit('Submit', array('class' =>'btn btn-dark'))}}
-         {{ Form::close() }}
+        <div class="container">
+            {{ Form::open(array('action'=> 'JobFormController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data')) }}
+                <div class="form-group">
+                    {{Form::label('title','JobTitle')}}
+                    {{Form::text('jobtitle','',array('class'=>'form-control','placeholder'=>'Title'))}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('body','Body')}}
+                    {{Form::text('companyname','',array('class'  => 'form-control', 'placeholder' => 'Body text'))}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('body','Body')}}
+                    {{Form::text('location','',array('class'  => 'form-control', 'placeholder' => 'Body text'))}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('body','Body')}}
+                    {{Form::text('schedule','',array('class'  => 'form-control', 'placeholder' => 'Body text'))}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('body','Body')}}
+                    {{Form::text('requirements','',array('class'  => 'form-control', 'placeholder' => 'Body text'))}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('body','Body')}}
+                    {{Form::text('description','',array('class'  => 'form-control', 'placeholder' => 'Body text'))}}
+                </div>
+                <div class="form-group">
+                    {{-- {{Form::label('image upload','image')}} --}}
+                    {{ Form::file('cover_image')}}
+                    
+                </div>
+                {{Form::Submit('Submit', array('class' =>'btn btn-dark'))}}
+             {{ Form::close() }}
     </div>
     {{-- <div class="">
     <form method="POST" action="{{action('JobFormController@store')}}" enctype="multipart/form-data" name="data">
