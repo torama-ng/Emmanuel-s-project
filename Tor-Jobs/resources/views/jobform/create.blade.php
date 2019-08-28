@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     {{Form::label('body','Body')}}
-                    {{Form::text('description','',array('class'  => 'form-control', 'placeholder' => 'Body text'))}}
+                    {{Form::textarea('description','',array('class'  => 'form-control', 'placeholder' => 'Body text'))}}
                 </div>
                 <div class="form-group">
                     {{-- {{Form::label('image upload','image')}} --}}

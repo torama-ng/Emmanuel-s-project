@@ -9,11 +9,11 @@
             <div class="row no-gutters">
               <div class="col-md-4">
                 
-                  <img src="/storage/users_images/{{$job->users_image}}" alt="" style="height:30%;width:100%;">
+                  <img src="/storage/users_images/{{$job->cover_image}}" alt="" style="height:30%;width:100%;">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h2 class="card-title"><a href="/jobform/{{$job->id}}">{{$job->jcompanyname}}</a></h2>
+                  <h2 class="card-title"><a href="/jobform/{{$job->id}}">{{$job->companyname}}</a></h2>
                 <p class="card-text">{{$job->jobtitle}}</p>
                   <p class="card-text"><small class="text-muted">{{$job->created_at}}</small></p>
                 <button type="button" class="btn btn-dark"><a href="/jobform/{{$job->id}}">view</a></button>

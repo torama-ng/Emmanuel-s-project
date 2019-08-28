@@ -48,16 +48,16 @@ class JobFormController extends Controller
         ));
 
                   // file upload
-                  if($request->hasFile('users_image')){
-                    $fileNameWithExt = $request->file('users_image')->getClientOriginalName();
+                  if($request->hasFile('cover_image')){
+                    $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
                     // get file name
                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
                     // get extension
-                    $extension = $request->file('users_image')->getClientOriginalExtension();
+                    $extension = $request->file('cover_image')->getClientOriginalExtension();
         
                     $fileNameToStore = $filename.'_'.time().'.'.$extension;
                     // upload
-                    $path = $request->file('users_image')->storeAs('public/users_images', $fileNameToStore);
+                    $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
                 }
                 else{
                     $fileNameToStore = 'noimage.jpg';
