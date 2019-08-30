@@ -1,4 +1,4 @@
-<div id="app">
+{{-- <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container nav">
                 <a class="navbar-brand " href="{{ url('/') }}"style="font-size:50px; font-weight:400;  
@@ -28,7 +28,7 @@
                             <a href="/jobform">Employers <br>Post jobs & find talents</a>
                         </li>
                     @endif  --}}
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}" style="font-size:18px;">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
@@ -69,12 +69,12 @@
             </div>
         </nav>
        
-              <nav class="navbar navbar-expand-md navbar-light bg-light ">
+              <nav class="navbar navbar-expand-md navbar-light bg-light "> --}}
                     {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button> --}}
                   
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    {{-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown ">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -115,4 +115,127 @@
                       </ul>
                      
                     </div>
-                  </nav>
+                  </nav> --}} 
+
+
+
+                  {{-- <div class="site"> --}}
+                      <header class="noo-header" id="noo-header">
+                        <div class="navbar-wrapper">
+                          <div class="navbar navbar-default fixed-top shrinkable">
+                            <div class="container-boxed max">
+                              <div class="navbar-header">
+                                <h1 class="sr-only">JobMonster</h1> 
+                                <a class="navbar-toggle collapsed" data-toggle="collapse" data-target=".noo-navbar-collapse">
+                                  <span class="sr-only">Navigation</span>
+                                  <i class="fa fa-bars"></i>
+                                </a>
+                                <a class="navbar-toggle member-navbar-toggle collapsed" data-toggle="collapse" data-target=".noo-user-navbar-collapse">
+                                  <i class="fa fa-user"></i>
+                                </a>
+                                <a href="./" class="navbar-brand">
+                                  <img class="noo-logo-img noo-logo-normal" src="images/" alt="logo">
+                                  <img class="noo-logo-mobile-img noo-logo-normal" src="images/logo-mobile.png" alt="">
+                                </a>
+                              </div>  
+                              <nav class="collapse navbar-collapse noo-user-navbar-collapse">
+                                <ul class="navbar-nav sf-menu">
+                                  <li>
+                                    <a href="/login"><i class="fa fa-sign-in"></i> Login</a>
+                                  </li>
+                                  <li class="button_socical fb">
+                                    <i class="fa fa-facebook-square"></i>
+                                    <em class="fa-facebook-square">Login with Facebook</em>
+                                  </li>
+                                  <li class="button_socical gg">
+                                    <i class="fa fa-google-plus"></i>
+                                    <em class="fa-google-plus">Login with Google</em>
+                                  </li>
+                                  <li class="button_socical linkedin">
+                                    <i class="fa fa-linkedin-square"></i>
+                                    <em class="fa-linkedin-square">Login with LinkedIn</em>
+                                  </li>
+                                  <li>
+                                    <a href="/register"><i class="fa fa-key"></i> Register</a>
+                                  </li>
+                                </ul>
+                              </nav>
+                              <nav class="collapse navbar-collapse noo-navbar-collapse">
+                                <ul class="navbar-nav sf-menu">
+                                  <li class="current-menu-item align-left">
+                                    <a href="./">Home</a>
+                                    <ul class="sub-menu">
+                                      <li><a href="home-resume.html">Home Resume</a></li>
+                                      <li><a href="home-2.html">Home Ver.2</a></li>
+                                      <li><a href="home-map.html">Home Search Map</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="align-left">
+                                    <a href="/jobform">Jobs</a>
+                                    <ul class="sub-menu">
+                                      <li><a href="jobs-fullwidth.html">Jobs Fullwidth</a></li>
+                                      <li><a href="jobs-detail.html">Jobs Detail</a></li>
+                                      <li><a href="post-a-job-step-1.html">Post a job - Step 1</a></li>
+                                      <li><a href="post-a-job-step-2.html">Post a job - Step 2</a></li>
+                                      <li><a href="post-a-job-step-3.html">Post a job - Step 3</a></li>
+                                      <li><a href="post-a-job-step-4.html">Post a job - Step 4</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="align-left">
+                                    <a href="/company">Companies</a>
+                                    <ul class="sub-menu">
+                                      <li><a href="company-detail.html">Company Detail</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="align-left">
+                                    <a href="resume.html">Resumes</a>
+                                    <ul class="sub-menu">
+                                      <li><a href="resume-detail.html">Resume Detail</a></li>
+                                      <li><a href="post-a-resume-step-1.html">Post a resume - Step 1</a></li>
+                                      <li><a href="post-a-resume-step-2.html">Post a resume - Step 2</a></li>
+                                      <li><a href="post-a-resume-step-3.html">Post a resume - Step 3</a></li>
+                                      <li><a href="post-a-resume-step-4.html">Post a resume - Step 4</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="align-left">
+                                    <a href="#">Pages</a>
+                                    <ul class="sub-menu">
+                                      <li><a href="blog.html">Blog</a></li>
+                                      <li><a href="blog-detail.html">Blog Detail</a></li>
+                                      <li><a href="member.html">Member</a></li>
+                                      <li><a href="packages.html">Packages</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="menu-item-post-btn">
+                                    <a href="post-a-job-step-2.html">Post a Job</a>
+                                  </li>
+                                  <li class="nav-item-member-profile login-link align-center">
+                                    <a href="#" class="member-links member-login-link" data-rel="loginModal">
+                                      <i class="fa fa-sign-in"></i>&nbsp;Login
+                                    </a>
+                                    <ul class="sub-menu login-socical">
+                                      <li class="button_socical fb">
+                                        <i class="fa fa-facebook-square"></i>
+                                        <em class="fa-facebook-square">Login with Facebook</em>
+                                      </li>
+                                      <li class="button_socical gg">
+                                        <i class="fa fa-google-plus"></i>
+                                        <em class="fa-google-plus">Login with Google</em>
+                                      </li>
+                                      <li class="button_socical linkedin">
+                                        <i class="fa fa-linkedin-square"></i>
+                                        <em class="fa-linkedin-square">Login with LinkedIn</em>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <li class="nav-item-member-profile register-link">
+                                    <a class="member-links member-register-link" href="#" data-rel="registerModal">
+                                      <i class="fa fa-key"></i>&nbsp;Register
+                                    </a>
+                                  </li>
+                                </ul>
+                              </nav>  
+                            </div>  
+                          </div>  
+                        </div>
+                      </header>

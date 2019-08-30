@@ -16,12 +16,28 @@ class JobForm extends Migration
         Schema::create('jobform', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('jobtitle');
-            $table->string('companyname');
+            $table->string('company_name');
+            $table->string('company_website');
             $table->string('location');
-            $table->string('schedule');
-            $table->string('requirements');
-            $table->mediumText('description');
-            $table->string('users_image');
+            $table->string('jobtype');
+            $table->string('jobcategory');
+            $table->string('closing_date');
+            $table->string('application_notify_email');
+            $table->string('salary_offer');
+            $table->string('experience_level');
+            $table->string('total_years');
+            $table->string('academic_degree');
+            $table->string('dress_code');
+            $table->mediumText('job_description');
+            $table->mediumText('company_description');
+            $table->string('cover_image');
+            $table->string('cover_image2');
+            $table->string('company_logo');
+            $table->string('google');
+            $table->string('facebook');
+            $table->string('twitter');
+            $table->string('instagram');
+            $table->string('linkedin');
             $table->timestamps();
         });
     }

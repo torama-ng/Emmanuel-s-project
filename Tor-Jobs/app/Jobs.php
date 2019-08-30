@@ -10,7 +10,7 @@ class Jobs extends Model
 
     public $primaryKey = 'id';
 
-     protected $fillable = ['firstname', 'lastname', 'description','users_image'];
+     protected $fillable = ['firstname', 'lastname', 'description','cover_image'];
 
     public $timestamps = true;
 }
