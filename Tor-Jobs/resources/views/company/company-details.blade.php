@@ -1,3 +1,7 @@
+@extends('layouts.app')
+@section('content')
+    
+
 <div class="noo-page-heading">
         <div class="container-boxed max parallax-content">
             <div class="page-heading-info">
@@ -202,3 +206,4 @@
             </div>  
         </div>  
     </div>
+    @endsection

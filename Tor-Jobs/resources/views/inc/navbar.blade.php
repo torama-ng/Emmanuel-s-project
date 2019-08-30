@@ -134,7 +134,7 @@
                                   <i class="fa fa-user"></i>
                                 </a>
                                 <a href="./" class="navbar-brand">
-                                  <img class="noo-logo-img noo-logo-normal" src="images/" alt="logo">
+                                  <img class="noo-logo-img noo-logo-normal" src="/images/logo-jobmonster.png" alt="logo">
                                   <img class="noo-logo-mobile-img noo-logo-normal" src="images/logo-mobile.png" alt="">
                                 </a>
                               </div>  
@@ -184,7 +184,7 @@
                                   <li class="align-left">
                                     <a href="/company">Companies</a>
                                     <ul class="sub-menu">
-                                      <li><a href="company-detail.html">Company Detail</a></li>
+                                      <li><a href="/company-details">Company Detail</a></li>
                                     </ul>
                                   </li>
                                   <li class="align-left">
@@ -207,7 +207,7 @@
                                     </ul>
                                   </li>
                                   <li class="menu-item-post-btn">
-                                    <a href="post-a-job-step-2.html">Post a Job</a>
+                                    <a href="/jobform/create">Post a Job</a>
                                   </li>
                                   <li class="nav-item-member-profile login-link align-center">
                                     <a href="#" class="member-links member-login-link" data-rel="loginModal">

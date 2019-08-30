@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="create-title">Job-Form</h3>
+    {{-- <h1 class="create-title">Job-Form</h3>
         <div class="container">
             {{ Form::open(array('action'=> 'JobFormController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data')) }}
                 <div class="form-group">
@@ -30,12 +30,12 @@
                 </div>
                 <div class="form-group">
                     {{-- {{Form::label('image upload','image')}} --}}
-                    {{ Form::file('cover_image')}}
+                    {{-- {{ Form::file('cover_image')}}
                     
                 </div>
                 {{Form::Submit('Submit', array('class' =>'btn btn-dark'))}}
              {{ Form::close() }}
-    </div>
+    </div>  --}}
     {{-- <div class="">
     <form method="POST" action="{{action('JobFormController@store')}}" enctype="multipart/form-data" name="data">
         <input name="_method" type="hidden" value="POST">
@@ -285,6 +285,7 @@
                                                             <div class="col-sm-9">
                                                                 <div class='form-control-flat'>
                                                                     <label class='radio'>
+                                                                    <form value="{{old('total_years')}}" >
                                                                         <input type='radio' name='year_experience' value='0-5' checked="checked">
                                                                         <i></i>0-5
                                                                     </label>
@@ -306,6 +307,7 @@
                                                                         <input type='radio' name='year_experience' value='20+'>
                                                                         <i></i>20+
                                                                     </label>
+                                                                </form>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -314,6 +316,7 @@
                                                             <div class="col-sm-9">
                                                                 <div class='form-control-flat'>
                                                                     <label class='radio'>
+                                                                    <form value="{{old('academic_degree')}}">
                                                                         <input type='radio' name='academic_degree' value='associate' checked="checked">
                                                                         <i></i>Associate Degree
                                                                     </label>
@@ -335,6 +338,7 @@
                                                                         <input type='radio' name='academic_degree' value='doctoral'>
                                                                         <i></i>Doctoral Degree
                                                                     </label>
+                                                                </form>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -343,6 +347,7 @@
                                                             <div class="col-sm-9">
                                                                 <div class='form-control-flat'>
                                                                     <label class='radio'>
+                                                                            <form value="{{old('dress_code')}}">
                                                                         <input type='radio' name='dress_code' value='Indifferent' checked="checked">
                                                                         <i></i>Indifferent
                                                                     </label>
@@ -358,13 +363,14 @@
                                                                         <input type='radio' name='dress_code' value='Formal'>
                                                                         <i></i>Formal
                                                                     </label>
+                                                                </form>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label for="working_hours" class="col-sm-3 control-label">Working Hours</label>
                                                             <div class="col-sm-9">
-                                                                <textarea class="form-control" id="working_hours" name="working_hours" placeholder="" rows="8" ></textarea>
+                                                                <textarea class="form-control" value="working_hours" id="working_hours" name="working_hours" placeholder="" rows="8" ></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -374,61 +380,61 @@
                                                             <div class="form-group row">
                                                                 <label for="company_name" class="col-sm-3 control-label">Company Name</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" id="company_name" value="" name="company_name" placeholder="Enter your company name">
+                                                                    <input type="text" class="form-control" id="company_name" value="{{old('company_name')}}" name="company_name" placeholder="Enter your company name">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label for="company_website" class="col-sm-3 control-label">Company Website</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" id="company_website" value="" name="company_website" placeholder="Enter your company website">
+                                                                    <input type="text" class="form-control" id="company_website" value="{{old('company_website')}}" name="company_website" placeholder="Enter your company website">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label for="company_desc" class="col-sm-3 control-label">Company Description</label>
                                                                 <div class="col-sm-9">
-                                                                    <textarea class="form-control" id="company_desc" name="company_desc" rows="8" placeholder="Enter your company description"></textarea>
+                                                                    <textarea class="form-control" value="{{old('company_description')}}" id="company_desc" name="company_desc" rows="8" placeholder="Enter your company description"></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-3 control-label">Company Logo</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="file" name="application_attachment" accept=".jpg,.png,.gif">
+                                                                <input type="file" value="{{old('company_logo')}}" name="application_attachment" accept=".jpg,.png,.gif">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-3 control-label">Cover Image</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="file" name="application_attachment" accept=".jpg,.png,.gif">
+                                                                    <input type="file" value="{{old('cover_image2')}}" name="application_attachment" accept=".jpg,.png,.gif">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label for="company_googleplus" class="col-sm-3 control-label">Google+</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" id="company_googleplus" value="" name="company_googleplus" placeholder="http://">
+                                                                    <input type="text" value="{{old('google')}}" class="form-control" id="company_googleplus" value="" name="company_googleplus" placeholder="http://">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label for="company_facebook" class="col-sm-3 control-label">Facebook</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" id="company_facebook" value="" name="company_facebook" placeholder="http://">
+                                                                    <input type="text" value="{{old('facebook')}}" class="form-control" id="company_facebook" value="" name="company_facebook" placeholder="http://">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label for="company_linkedin" class="col-sm-3 control-label">LinkedIn</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" id="company_linkedin" value="" name="company_linkedin" placeholder="http://">
+                                                                    <input type="text" value="{{old('linkedin')}}" class="form-control" id="company_linkedin" value="" name="company_linkedin" placeholder="http://">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label for="company_twitter" class="col-sm-3 control-label">Twitter</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" id="company_twitter" value=""  name="company_twitter" placeholder="http://">
+                                                                    <input type="text" value="{{old('twitter')}}" class="form-control" id="company_twitter" value=""  name="company_twitter" placeholder="http://">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group  row">
                                                                 <label for="company_instagram" class="col-sm-3 control-label">Instagram</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" id="company_instagram" value="" name="company_instagram" placeholder="http://">
+                                                                    <input type="text" value="{{old('instagram')}}" class="form-control" id="company_instagram" value="" name="company_instagram" placeholder="http://">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -438,7 +444,7 @@
                                         </div>
                                         <div class="form-actions form-group text-center clearfix">
                                             <a class="btn btn-primary" href="#">Back</a>
-                                              <button type="button" class="btn btn-primary">Continue</button>
+                                        <button type="submit" class="btn btn-primary">Continue</button>
                                               {{csrf_field()}}
                                          </div>
                                     </div>
