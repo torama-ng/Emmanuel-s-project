@@ -1,54 +1,4 @@
-/* 
-.shadow-sm{
-    height:80px;
-}
-.account{
-   background-color: gray; 
-}
-.quote{
-    padding: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(100, 120, 115);
-}
-.quote h2{
-    font-size: 50px;
-    font-weight:1000;
-}
-.rounded{
-   margin-bottom: 20px;
-}
-.img-decor-bg {
-background-color: #00b6b4;
-margin: auto;
-top: -15px;
-bottom: 0;
-right: 15px;
-}
-.search-style{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
 
-}
-.header{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-
-}
-.error-messages{
-    display:flex; 
-    justify-content: center;
-    justify-items: center; 
-    font-size:50px;
-    color:black;
-    opacity: 0.5;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-} */
 /* Font style */
 .fsi {
     font-style: italic !important;
@@ -1410,4 +1360,10 @@ right: 15px;
   }
   .bg-image {
       background-image: url(../images/background_1920x590.jpg);
+  }
+  .login-container{
+   
+  }
+  .login-style{
+   
   }

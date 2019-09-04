@@ -140,34 +140,48 @@
                               </div>  
                               <nav class="collapse navbar-collapse noo-user-navbar-collapse">
                                 <ul class="navbar-nav sf-menu">
-                                  <li>
-                                    <a href="/login"><i class="fa fa-sign-in"></i> Login</a>
-                                  </li>
-                                  <li class="button_socical fb">
-                                    <i class="fa fa-facebook-square"></i>
-                                    <em class="fa-facebook-square">Login with Facebook</em>
-                                  </li>
-                                  <li class="button_socical gg">
-                                    <i class="fa fa-google-plus"></i>
-                                    <em class="fa-google-plus">Login with Google</em>
-                                  </li>
-                                  <li class="button_socical linkedin">
-                                    <i class="fa fa-linkedin-square"></i>
-                                    <em class="fa-linkedin-square">Login with LinkedIn</em>
-                                  </li>
-                                  <li>
-                                    <a href="/register"><i class="fa fa-key"></i> Register</a>
-                                  </li>
+                                    @guest
+                                    @if (Route::has('login'))
+                                        <li class="align-left">
+                                               
+                                            <a  href="{{ route('login') }}"><i class="fa fa-sign-in"></i>{{ __('Login') }}</a>
+                                        </li>
+                                        @endif
+                                        @if (Route::has('register'))
+                                            <li class="align-left">
+                                                <a  href="{{ route('register') }}"><i class="fa fa-key"></i>{{ __('Register') }}</a>
+                                            </li>
+                                        @endif
+                                    @else
+                                    <li class="align-right">
+                                        <a id="navbarDropdown" class="align-left" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                          <i class="fa fa-user"> {{ Auth::user()->name }}</i> <span class="caret"></span>
+                                        </a>
+                                       
+                                         <div class="dropdown-menu  align-right" aria-labelledby="navbarDropdown"> 
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+        
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div> 
+                  
+                                    </li>
+                                @endguest
                                 </ul>
                               </nav>
                               <nav class="collapse navbar-collapse noo-navbar-collapse">
                                 <ul class="navbar-nav sf-menu">
                                   <li class="current-menu-item align-left">
-                                    <a href="./">Home</a>
+                                    <a href="/">Home</a>
                                     <ul class="sub-menu">
-                                      <li><a href="home-resume.html">Home Resume</a></li>
-                                      <li><a href="home-2.html">Home Ver.2</a></li>
-                                      <li><a href="home-map.html">Home Search Map</a></li>
+                                      <li><a href="/home">Home Resume</a></li>
+                                      <li><a href="/home-2">Home Ver.2</a></li>
+                                      <li><a href="/map">Home Search Map</a></li>
                                     </ul>
                                   </li>
                                   <li class="align-left">
@@ -198,10 +212,9 @@
                                     </ul>
                                   </li>
                                   <li class="align-left">
-                                    <a href="#">Pages</a>
+                                    <a href="/blog">Blog</a>
                                     <ul class="sub-menu">
-                                      <li><a href="blog.html">Blog</a></li>
-                                      <li><a href="blog-detail.html">Blog Detail</a></li>
+                                      <li><a href="/blog-details">Blog Detail</a></li>
                                       <li><a href="member.html">Member</a></li>
                                       <li><a href="packages.html">Packages</a></li>
                                     </ul>
@@ -209,30 +222,38 @@
                                   <li class="menu-item-post-btn">
                                     <a href="/jobform/create">Post a Job</a>
                                   </li>
-                                  <li class="nav-item-member-profile login-link align-center">
-                                    <a href="#" class="member-links member-login-link" data-rel="loginModal">
-                                      <i class="fa fa-sign-in"></i>&nbsp;Login
-                                    </a>
-                                    <ul class="sub-menu login-socical">
-                                      <li class="button_socical fb">
-                                        <i class="fa fa-facebook-square"></i>
-                                        <em class="fa-facebook-square">Login with Facebook</em>
+                                  @guest
+                                  @if (Route::has('login'))
+                                      <li class="align-left">
+                                             
+                                          <a  href="{{ route('login') }}"><i class="fa fa-sign-in"></i>{{ __('Login') }}</a>
                                       </li>
-                                      <li class="button_socical gg">
-                                        <i class="fa fa-google-plus"></i>
-                                        <em class="fa-google-plus">Login with Google</em>
-                                      </li>
-                                      <li class="button_socical linkedin">
-                                        <i class="fa fa-linkedin-square"></i>
-                                        <em class="fa-linkedin-square">Login with LinkedIn</em>
-                                      </li>
-                                    </ul>
+                                      @endif
+                                      @if (Route::has('register'))
+                                          <li class="align-left">
+                                              <a  href="{{ route('register') }}"><i class="fa fa-key"></i>{{ __('Register') }}</a>
+                                          </li>
+                                      @endif
+                                  @else
+                                  <li class="align-right">
+                                      <a id="navbarDropdown" class="align-left" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <i class="fa fa-user"> {{ Auth::user()->name }}</i> <span class="caret"></span>
+                                      </a>
+                                     
+                                       <div class="dropdown-menu  align-right" aria-labelledby="navbarDropdown"> 
+                                          <a class="dropdown-item" href="{{ route('logout') }}"
+                                             onclick="event.preventDefault();
+                                                           document.getElementById('logout-form').submit();">
+                                              {{ __('Logout') }}
+                                          </a>
+      
+                                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                              @csrf
+                                          </form>
+                                      </div> 
+                
                                   </li>
-                                  <li class="nav-item-member-profile register-link">
-                                    <a class="member-links member-register-link" href="#" data-rel="registerModal">
-                                      <i class="fa fa-key"></i>&nbsp;Register
-                                    </a>
-                                  </li>
+                              @endguest
                                 </ul>
                               </nav>  
                             </div>  
