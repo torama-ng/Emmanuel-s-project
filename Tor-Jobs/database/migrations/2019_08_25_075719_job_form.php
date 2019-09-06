@@ -19,6 +19,7 @@ class JobForm extends Migration
             $table->string('company_name');
             $table->string('company_website');
             $table->string('location');
+            $table->string('working_hours');
             $table->string('jobtype');
             $table->string('jobcategory');
             $table->string('closing_date');

@@ -4,24 +4,6 @@
 @if (count($jobs) > 0)
 @foreach ($jobs as $job)
 
-{{-- <div class="container">
-        <div class="card mb-3" style="max-width: 100%;">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                
-                  <img src="/storage/users_images/{{$job->cover_image}}" alt="" style="height:30%;width:100%;">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h2 class="card-title"><a href="/jobform/{{$job->id}}">{{$job->companyname}}</a></h2>
-                <p class="card-text">{{$job->jobtitle}}</p>
-                  <p class="card-text"><small class="text-muted">{{$job->created_at}}</small></p>
-                <button type="button" class="btn btn-dark"><a href="/jobform/{{$job->id}}">view</a></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> --}}
 
         <div class="noo-page-heading">
             <div class="container-boxed max parallax-content">
@@ -29,7 +11,7 @@
                 <h1 class="page-title">Jobs </h1>
               </div>
             </div> 
-            <div class="parallax heading" data-parallax="1" data-parallax_no_mobile="1" data-velocity="0.1"></div>
+            {{-- <div class="parallax heading" data-parallax="1" data-parallax_no_mobile="1" data-velocity="0.1"></div> --}}
           </div>
           <div class="container-wrap">
             <div class="main-content container-boxed max offset">

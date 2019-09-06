@@ -69,6 +69,11 @@
                             $('#noo-tabs-2 a:eq(0)').tab('show');
                         });
                     </script>
+                    <script>
+                      jQuery(document).ready(function($) {
+                        $(".jform-datepicker").datetimepicker({format:"YYYY-M-dd"});
+                      });
+                    </script>
                 
             
     </head>

@@ -53,14 +53,14 @@ class JobFormController extends Controller
             'academic_degree' => 'required',
             'dress_code' => 'required',
             'job_description' => 'required',
-            'company_description' => 'required',
+            'working_hours' => 'required',
             'google' => 'required',
             'facebook' => 'required',
             'instagram' => 'required',
             'linkedin' => 'required',
             'cover_image' => 'image|nullable|max:1999',
             'cover_image2' => 'image|nullable|max:1999',
-            'company_name' => 'image|nullable|max:1999',
+            'company_logo' => 'image|nullable|max:1999',
         ));
 
                   // file upload
@@ -95,7 +95,7 @@ class JobFormController extends Controller
         $job->academic_degree = $request->input('academic_degree');
         $job->dress_code = $request->input('dress_code');
         $job->job_description = $request->input('job_description');
-        $job->company_description = $request->input('company_description');
+        $job->working_hours = $request->input('working_hours');
         $job->google = $request->input('google');
         $job->facebook = $request->input('facebook');
         $job->twitter = $request->input('twitter');
@@ -158,14 +158,14 @@ class JobFormController extends Controller
             'academic_degree' => 'required',
             'dress_code' => 'required',
             'job_description' => 'required',
-            'company_description' => 'required',
+            'working_hours' => 'required',
             'google' => 'required',
             'facebook' => 'required',
             'instagram' => 'required',
             'linkedin' => 'required',
             'cover_image' => 'image|nullable|max:1999',
             'cover_image2' => 'image|nullable|max:1999',
-            'company_name' => 'image|nullable|max:1999',
+            'company_logo' => 'image|nullable|max:1999',
         ));
 
         
@@ -185,7 +185,7 @@ class JobFormController extends Controller
         $job->academic_degree = $request->input('academic_degree');
         $job->dress_code = $request->input('dress_code');
         $job->job_description = $request->input('job_description');
-        $job->company_description = $request->input('company_description');
+        $job->working_hours = $request->input('working_hours');
         $job->google = $request->input('google');
         $job->facebook = $request->input('facebook');
         $job->twitter = $request->input('twitter');

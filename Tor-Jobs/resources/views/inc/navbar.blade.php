@@ -189,10 +189,10 @@
                                     <ul class="sub-menu">
                                       <li><a href="jobs-fullwidth.html">Jobs Fullwidth</a></li>
                                       <li><a href="jobs-detail.html">Jobs Detail</a></li>
-                                      <li><a href="post-a-job-step-1.html">Post a job - Step 1</a></li>
+                                      {{-- <li><a href="post-a-job-step-1.html">Post a job - Step 1</a></li>
                                       <li><a href="post-a-job-step-2.html">Post a job - Step 2</a></li>
                                       <li><a href="post-a-job-step-3.html">Post a job - Step 3</a></li>
-                                      <li><a href="post-a-job-step-4.html">Post a job - Step 4</a></li>
+                                      <li><a href="post-a-job-step-4.html">Post a job - Step 4</a></li> --}}
                                     </ul>
                                   </li>
                                   <li class="align-left">

@@ -15,12 +15,12 @@
        <hr>
     <small>Written on {{$job->created_at}}</small>
     <hr>
-    <a href="/jobform/{{$job->id}}/edit" class="btn btn-dark">Edit</a>
+    {{-- <a href="/jobform/{{$job->id}}/edit" class="btn btn-dark">Edit</a>
     
     {!!Form::open(['action'=>['JobFormController@destroy',$job->id], 'method'=>'POST', 'class'=>'pull-right', 'style' => 'float:right'])!!}
     {{Form::hidden('_method', 'DELETE')}}
     {{Form::submit('Delete',['class' => 'btn btn-danger pull-right'])}}
-    {!!Form::close()!!}
+    {!!Form::close()!!} --}}
     </div>
 
 @endsection
