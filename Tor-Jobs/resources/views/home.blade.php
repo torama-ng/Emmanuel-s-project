@@ -806,59 +806,6 @@
             </div>  
         </footer>  
     </div>  
-    <a href="#" class="go-to-top hidden-print"><i class="fa fa-angle-up"></i></a>
-
-    <script type='text/javascript' src='js/jquery.js'></script>
-    <script type='text/javascript' src='js/jquery-migrate.min.js'></script>
-    <script type='text/javascript' src='js/modernizr-2.7.1.min.js'></script>
-    <script type='text/javascript' src='js/jquery.cookie.js'></script>
-    <script type='text/javascript' src='js/jquery.blockUI.min.js'></script>
-    <script type='text/javascript' src='js/imagesloaded.pkgd.min.js'></script>
-    <script type='text/javascript' src='js/isotope-2.0.0.min.js'></script>
-    <script type='text/javascript' src='js/jquery.touchSwipe.min.js'></script>
-    <script type='text/javascript' src='js/bootstrap.min.js'></script>
-    <script type='text/javascript' src='js/hoverIntent-r7.min.js'></script>
-    <script type='text/javascript' src='js/superfish-1.7.4.min.js'></script>
-    <script type='text/javascript' src='js/script.js'></script>
-    <script type='text/javascript' src='js/chosen.jquery.min.js'></script>
-    <script type='text/javascript' src='js/jquery.datetimepicker.js'></script>
-    <script type='text/javascript' src='js/jquery.parallax-1.1.3.js'></script>
-    <script type='text/javascript' src='js/jquery.carouFredSel-6.2.1-packed.js'></script>
-    <script type='text/javascript' src='js/custom.js'></script>
-    <script>
-        jQuery('document').ready(function ($) {
-            $('#noo-slider-3 .sliders').carouFredSel({
-                infinite: true,
-                circular: true,
-                responsive: true,
-                debug : false,
-                items: {
-                  start: 0
-                },
-                scroll: {
-                  items: 1,
-                  duration: 400,
-
-                  fx: "scroll"
-                },
-                auto: {
-                  timeoutDuration: 3000,
-
-                  play: true
-                },
-
-                pagination: {
-                  container: "#noo-slider-3-pagination"
-                },
-                swipe: {
-                  onTouch: true,
-                  onMouse: true
-                }
-            });
-            $('#noo-tabs-2 a:eq(0)').tab('show');
-        });
-    </script>
-
     
 
     <div class="memberModalLogin modal fade" id="userloginModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -939,17 +886,23 @@
                     <h4 class="modal-title">Sign Up</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="noo-ajax-register-form form-horizontal">
+                    <form method="POST" action="{{ route('register') }}" class="noo-ajax-register-form form-horizontal">
+                        @csrf
                         <div class="form-group row user_login_container">
-                            <label class="col-sm-3 control-label">Username</label>
+                            <label class="col-sm-3 control-label">Name</label>
                             <div class="col-sm-9">
-                                <input type="text" class="user_login form-control" name="user_login" required placeholder="Username">
+                                <input id="name" type="text" class="user_login @error('name') is-invalid @enderror form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-9">
-                                <input type="email" class="user_email form-control" name="user_email" required placeholder="Email">
+                                <input id="email" type="email" class="user_email @error('email') is-invalid @enderror form-control" name="email" value="{{ old('email') }}" required autocomplete="email">
                             </div>
                         </div>
                         <div class="form-group row">

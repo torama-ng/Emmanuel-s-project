@@ -60,7 +60,19 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
+                        <div class="form-group row">
+                            <label class="col-sm-4 control-label">You are</label>
+                            <div class="col-sm-6">
+                                {{-- <div class="form-control-flat"> --}}
+                                    <select class="user_role form-control" name="user_role" required>
+                                        <option value="">-Select-</option>
+                                        <option value="">I&#039;m an employer looking to hire</option>
+                                        <option value="">I&#039;m a candidate looking for a job</option>
+                                    </select>
+                                    {{-- <i class="fa fa-caret-down"></i> --}}
+                                {{-- </div> --}}
+                            </div>
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

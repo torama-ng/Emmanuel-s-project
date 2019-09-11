@@ -32,3 +32,9 @@ Route::get('blog-details','PagesController@blog_details');
 Route::get('home','PagesController@resume_home');
 Route::get('map','PagesController@resume_map');
 Route::get('home-2','PagesController@resume_home_2');
+
+Route::get('/admin',function(){
+    return 'admin previlege';
+})->middleware(['auth','auth.admin']);
+Route::resource('/admin/users', 'Admin\UserController',['except' =>['show','create','store']]);
+

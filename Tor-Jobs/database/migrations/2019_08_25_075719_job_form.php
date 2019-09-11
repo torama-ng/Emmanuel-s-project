@@ -15,8 +15,8 @@ class JobForm extends Migration
     {
         Schema::create('jobform', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('jobtitle');
-            $table->string('company_name');
+            $table->text('jobtitle');
+            $table->text('company_name');
             $table->string('company_website');
             $table->string('location');
             $table->string('working_hours');
