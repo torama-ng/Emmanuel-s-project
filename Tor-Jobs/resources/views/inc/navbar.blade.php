@@ -201,6 +201,7 @@
                                       <li><a href="/company-details">Company Detail</a></li>
                                     </ul>
                                   </li>
+                                  @can('isCandidate')
                                   <li class="align-left">
                                     <a href="resume.html">Resumes</a>
                                     <ul class="sub-menu">
@@ -211,6 +212,7 @@
                                       <li><a href="post-a-resume-step-4.html">Post a resume - Step 4</a></li>
                                     </ul>
                                   </li>
+                                  @endcan
                                   <li class="align-left">
                                     <a href="/blog">Blog</a>
                                     <ul class="sub-menu">
@@ -219,9 +221,11 @@
                                       <li><a href="packages.html">Packages</a></li>
                                     </ul>
                                   </li>
+                                  @can('isEmployer')
                                   <li class="menu-item-post-btn">
                                     <a href="/jobform/create">Post a Job</a>
                                   </li>
+                                  @endcan
                                   @guest
                                   @if (Route::has('login'))
                                       <li class="align-left">
