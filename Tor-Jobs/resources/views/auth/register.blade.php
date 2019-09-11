@@ -63,7 +63,6 @@
                         <div class="form-group row">
                             <label class="col-sm-4 control-label">You are</label>
                             <div class="col-sm-6">
-                                {{-- <div class="form-control-flat"> --}}
                                     <select class="user_role form-control @error('user_type') is-invalid @enderror" name="user_type" required>
                                         <option value="">-Select-</option>
                                         <option value="employer">I&#039;employer</option>
