@@ -14,8 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-       return view('welcome');
+        //
     }
+
 
     /**
      * Show the form for editing the specified resource.
