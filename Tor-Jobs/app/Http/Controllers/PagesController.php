@@ -29,4 +29,7 @@ class PagesController extends Controller
     public function resume_home_2(){
         return view('resume.home-2');
     }
+    public function Candidate_profile(){
+        return view('Profiles.Candidate.candidate-my-profile');
+    }
 }

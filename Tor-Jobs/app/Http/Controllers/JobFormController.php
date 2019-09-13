@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Http\Request;
 use App\Jobs;
 use DB;
@@ -27,9 +26,7 @@ class JobFormController extends Controller
      */
     public function create()
     {
-        if(!Gate::allows('isEmployer')){
-            abort(404,"Restricted Area");
-        }
+      
 
        return view('jobform.create');
     }
@@ -211,7 +208,7 @@ class JobFormController extends Controller
                         ->where('location', 'like', '%'.$location.'%')
                         ->paginate(5);
 
-       return view('welcome', ['jobs' => $jobs]);       
+       return view('jobform.index', ['jobs' => $jobs]);       
 
     }
 

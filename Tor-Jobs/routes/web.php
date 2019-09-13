@@ -27,14 +27,15 @@ Route::resource('jobform', 'JobFormController');
 Route::get('/search', 'JobFormController@search');
 Route::get('/company', 'PagesController@company');
 Route::get('/company-details', 'PagesController@details');
-Route::get('blog','PagesController@blog');
-Route::get('blog-details','PagesController@blog_details');
-Route::get('home','PagesController@resume_home');
-Route::get('map','PagesController@resume_map');
-Route::get('home-2','PagesController@resume_home_2');
-
-Route::get('/admin',function(){
-    return 'admin previlege';
-})->middleware(['auth','auth.admin']);
-Route::resource('/admin/users', 'Admin\UserController',['except' =>['show','create','store']]);
+Route::get('/blog','PagesController@blog');
+Route::get('/blog-details','PagesController@blog_details');
+Route::get('/index','ResumeController@index');
+Route::get('/map','PagesController@resume_map');
+Route::get('/home-2','PagesController@resume_home_2');
+Route::get('/Candidate', function(){
+    return view('Profiles.Candidate.candidate-my-profile');
+});
+Route::get('/Resume_form', function(){
+    return view('resume.resume_form');
+});
 

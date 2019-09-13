@@ -21,21 +21,12 @@
                 <li class="current-menu-item align-left">
                   <a href="/">Home</a>
                   <ul class="sub-menu">
-                    <li><a href="/home">Home Resume</a></li>
-                    <li><a href="/home-2">Home Ver.2</a></li>
                     <li><a href="/map">Home Search Map</a></li>
                   </ul>
                 </li>
                 <li class="align-left">
                   <a href="/jobform">Jobs</a>
-                  <ul class="sub-menu">
-                    <li><a href="jobs-fullwidth.html">Jobs Fullwidth</a></li>
-                    <li><a href="jobs-detail.html">Jobs Detail</a></li>
-                    {{-- <li><a href="post-a-job-step-1.html">Post a job - Step 1</a></li>
-                    <li><a href="post-a-job-step-2.html">Post a job - Step 2</a></li>
-                    <li><a href="post-a-job-step-3.html">Post a job - Step 3</a></li>
-                    <li><a href="post-a-job-step-4.html">Post a job - Step 4</a></li> --}}
-                  </ul>
+                  
                 </li>
                 <li class="align-left">
                   <a href="/company">Companies</a>
@@ -46,13 +37,11 @@
                   @if(Auth::check())
                       @if(Auth::user()->user_type === 'candidate')
                       <li class="align-left">
-                        <a href="resume.html">Resumes</a>
+                        <a href="index">Resumes</a>
                         <ul class="sub-menu">
-                          <li><a href="resume-detail.html">Resume Detail</a></li>
-                          <li><a href="post-a-resume-step-1.html">Post a resume - Step 1</a></li>
-                          <li><a href="post-a-resume-step-2.html">Post a resume - Step 2</a></li>
-                          <li><a href="post-a-resume-step-3.html">Post a resume - Step 3</a></li>
-                          <li><a href="post-a-resume-step-4.html">Post a resume - Step 4</a></li>
+                          {{-- <li><a href="home-2">Resume Detail</a></li>
+                          <li><a href="Post_resume">Post a resume</a></li> --}}
+                          <li><a href="map">Resume Map</a></li>
                         </ul>
                       </li>
                       @endif
@@ -88,19 +77,45 @@
                   <a id="navbarDropdown" class="align-left" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     <i class="fa fa-user"> {{ Auth::user()->name }}</i> <span class="caret"></span>
                   </a>
-                 
-                   <div class="dropdown-menu  align-right" aria-labelledby="navbarDropdown"> 
-                      <a class="dropdown-item" href="{{ route('logout') }}"
+                 <ul class="sub-menu">
+                  @if(Auth::check())
+                  @if(Auth::user()->user_type === 'employer')
+                  
+                  <li><a href="/Resumeform"><i class="fa fa-edit"></i> Post a Resume</a></li>
+                  <li><a href="candidate-manage-resume.html"><i class="fa fa-file-text-o"></i> Manage Resume</a></li>
+                  <li><a href="candidate-manage-application.html"><i class="fa fa-newspaper-o"></i> Manage Application</a></li>
+                  {{-- <li><a href="candidate-job-alert.html"><i class="fa fa-bell-o"></i> Jobs Alert</a></li> --}}
+                  <li class="divider" role="presentation"></li>
+                  <li class="current-menu-item"><a href="candidate-my-profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                  
+            
+                
+                  @endif
+                  @if(Auth::user()->user_type === 'candidate')
+                        <li><a href="/Resume_form"><i class="fa fa-edit"></i> Post a Resume</a></li>
+                        <li><a href="candidate-manage-resume.html"><i class="fa fa-file-text-o"></i> Manage Resume</a></li>
+                        <li><a href="candidate-manage-application.html"><i class="fa fa-newspaper-o"></i> Manage Application</a></li>
+                        {{-- <li><a href="candidate-job-alert.html"><i class="fa fa-bell-o"></i> Jobs Alert</a></li> --}}
+                        <li class="divider" role="presentation"></li>
+                        <li class="current-menu-item"><a href="/Candidate"><i class="fa fa-user"></i> My Profile</a></li>
+                        
+                  
+                
+                  @endif
+                  @endif
+
+                     <li> <a class="dropdown-item" href="{{ route('logout') }}"
                          onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
-                          {{ __('Logout') }}
+                         <i class="fa fa-sign-out"></i>Sign Out
                       </a>
-
+                     </li>
+                     
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                           @csrf
                       </form>
-                  </div> 
-
+                  {{-- </div> --}}
+                 </ul>
               </li>
           @endguest
           </ul>
