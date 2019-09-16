@@ -32,4 +32,7 @@ class PagesController extends Controller
     public function Candidate_profile(){
         return view('Profiles.Candidate.candidate-my-profile');
     }
+    public function employer_profile(){
+        return view('Profiles.Employer.employer');
+    }
 }

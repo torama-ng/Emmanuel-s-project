@@ -29,7 +29,11 @@
                         </div>
                         <div class="jform-body">
                             <div class="container-boxed max">
-                                <form class="form-horizontal">
+                                <form class="form-horizontal"  method="POST" action="{{action('ResumeController@store')}}" enctype="multipart/form-data" name="data">
+                                    <input name="_method" type="hidden" value="POST">
+    
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                                     <div class="jstep-content">
                                         <div class="jpanel jpanel-resume-form">
                                             <div class="jpanel-title">
@@ -95,7 +99,7 @@
                                                                     <div class="noo-addable-fields">
                                                                         <div class="fields-group row">
                                                                             <div class="col-sm-9 col-xs-6">
-                                                                                <input type="text" class="form-control" placeholder="Skill Name" name='skill_name' value="" />
+                                                                                <input type="text" class="form-control" placeholder="Skill Name" name='skill_name' value="skill_name" />
                                                                             </div>
                                                                             <div class="col-sm-3 col-xs-6">
                                                                                 <input type="text" class="form-control" name='skill_percent' value="" />
@@ -121,10 +125,11 @@
                                             </div>
                                         </div>
                                         <div class="form-actions form-group text-center clearfix">
-                                            <a class="btn btn-primary" href="#">Back</a>
-                                             <button type="button" class="btn btn-primary">Preview</button>
+                                    
+                                             <button type="submit" class="btn btn-primary">Preview</button>
                                          </div>
                                     </div>
+                                    {{csrf_field()}}
                                 </form>
                             </div>
                         </div>

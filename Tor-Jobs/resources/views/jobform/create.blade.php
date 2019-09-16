@@ -28,7 +28,10 @@
                     </div>
                     <div class="jform-body">
                         <div class="container-boxed max">
-                            <form class="form-horizontal" enctype="multipart/form-data">
+                            <form class="form-horizontal" method="POST" action="{{action('JobFormController@store')}}" enctype="multipart/form-data" name="data">
+                                <input name="_method" type="hidden" value="POST">
+    
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div id="step_content_form" class="jstep-content">
                                     <div class="jpanel jpanel-job-form">
                                         <div class="jpanel-title">
@@ -41,89 +44,89 @@
                                             <div class="job-form">
                                                 <div class="job-form-detail">
                                                     <div class="form-group row">
-                                                        <label for="position" class="col-sm-3 control-label">Job Title</label>
+                                                        <label for="jobtitle" class="col-sm-3 control-label">Job Title</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" value="" class="form-control" id="position"  name="position" autofocus required placeholder="Enter a short title for your job">
+                                                            <input type="text" value="" class="form-control" id="jobtitle"  name="jobtitle" autofocus required placeholder="Enter a short title for your job">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="desc" class="col-sm-3 control-label">Job Description</label>
+                                                        <label for="job_description" class="col-sm-3 control-label">Job description</label>
                                                         <div class="col-sm-9">
-                                                            <textarea class="form-control" id="desc"  name="desc" rows="8" placeholder="Describe your job in a few paragraphs"></textarea>
+                                                            <textarea class="form-control" id="job_description"  name="job_description" rows="8" placeholder="Describe your job in a few paragraphs"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 control-label">Cover Image</label>
                                                         <div class="col-sm-9">
-                                                            <input type="file" name="application_attachment" accept=".jpg,.png,.gif">
+                                                            <input type="file" name="cover_image" accept=".jpg,.png,.gif">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="location" class="col-sm-3 control-label">Job Location</label>
                                                         <div class="col-sm-9">
-                                                            <select id="location" name="location[]" multiple data-placeholder="Enter a city and country or leave it blank" class="form-control form-control-chosen">
+                                                            <select  name="location" class="form-control ">
                                                                 <option value="">&nbsp;</option>
-                                                                <option value="">Amsterdam</option>
-                                                                <option value="">Atlanta</option>
-                                                                <option value="">Berlin</option>
-                                                                <option value="">Brisbane</option>
-                                                                <option value="">California</option>
-                                                                <option value="">Ha Noi</option>
+                                                                <option value="Bayelsa">Bayelsa</option>
+                                                                <option value="Rivers">Rivers</option>
+                                                                <option value="Delta">Delta</option>
+                                                                <option value="Abuja">Abuja</option>
+                                                                <option value="Lagos">Lagos</option>
+                                                                <option value="Uyo">Uyo</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="type" class="col-sm-3 control-label">Job Type</label>
+                                                        <label for="jobtype" class="col-sm-3 control-label">Job type</label>
                                                         <div class="col-sm-9">
-                                                            <select class="form-control form-control-chosen" name="type" id="type" data-placeholder="Select job type for your job">
+                                                            <select class="form-control " name="jobtype" >
                                                                 <option value="">&nbsp;</option>
-                                                                <option value="">Contract</option>
-                                                                <option value="">Freelance</option>
-                                                                <option value="">Full Time</option>
-                                                                <option value="">Part Time</option>
+                                                                <option value="Contract">Contract</option>
+                                                                <option value="Freelance">Freelance</option>
+                                                                <option value="Full Time">Full Time</option>
+                                                                <option value="Part Time">Part Time</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="category" class="col-sm-3 control-label">Job Category</label>
+                                                        <label for="jobcategory" class="col-sm-3 control-label">Job Category</label>
                                                         <div class="col-sm-9">
-                                                            <select class="form-control form-control-chosen" name="category[]" id="category" multiple data-placeholder="Select a category for your job ">
+                                                            <select class="form-control " name="jobcategory" >
                                                                 <option value="">&nbsp;</option>
-                                                                <option value="">Customer Service</option>
-                                                                <option value="">Designer</option>
-                                                                <option value="">Developer</option>
-                                                                <option value="">Finance</option>
-                                                                <option value="">Human Resource</option>
-                                                                <option value="">Information Technology</option>
-                                                                <option value="">Marketing</option>
-                                                                <option value="">Others</option>
-                                                                <option value="">Sales</option>
+                                                                <option value="Customer Service">Customer Service</option>
+                                                                <option value="Designer">Designer</option>
+                                                                <option value="Developer">Developer</option>
+                                                                <option value="Finance">Finance</option>
+                                                                <option value="Human Resource">Human Resource</option>
+                                                                <option value="Information Technology">Information Technology</option>
+                                                                <option value="Marketing">Marketing</option>
+                                                                <option value="Others">Others</option>
+                                                                <option value="Sales">Sales</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="closing" class="col-sm-3 control-label">Closing Date</label>
+                                                        <label for="closing_date" class="col-sm-3 control-label">closing_date Date</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" value="" class="form-control jform-datepicker" id="closing"  name="closing" placeholder="YYYY-MM-DD">
+                                                            <input type="date" value="" class="form-control" name="closing_date" placeholder="YYYY-MM-DD">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="application_email" class="col-sm-3 control-label">Application Notify Email</label>
+                                                        <label for="application_notify_email" class="col-sm-3 control-label">Application Notify Email</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" value="" class="form-control" id="application_email"  name="application_email" >
+                                                            <input type="text" value="" class="form-control"  name="application_notify_email" >
                                                             <em>Email to receive application notification. Leave it blank to use your account email.</em>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="salary" class="col-sm-3 control-label">Salary Offer</label>
+                                                        <label for="salary_offer" class="col-sm-3 control-label">Salary Offer</label>
                                                         <div class="col-sm-9">
-                                                            <select id="salary" class="form-control form-control-chosen" name="salary" data-placeholder="Select Salary Offer" >
-                                                                <option value=''>0 ~ $3000</option>
-                                                                <option value=''>$3000 ~ $10.000</option>
-                                                                <option value=''>$10.000 ~ $20.000</option>
-                                                                <option value=''>$20.000 ~ $50.000</option>
-                                                                <option value=''>$50.000 ~ $100.000</option>
-                                                                <option value=''>$100.000 ~</option>
+                                                            <select  class="form-control " name="salary_offer" >
+                                                                <option value='0 ~ 3000'>0 ~ 3000</option>
+                                                                <option value='3000 ~ 10.000'>3000 ~ 10.000</option>
+                                                                <option value='10.000 ~ 20.000'>10.000 ~ 20.000</option>
+                                                                <option value='20.000 ~ 50.000'>20.000 ~ 50.000</option>
+                                                                <option value='50.000 ~ 100.000'>50.000 ~ 100.000</option>
+                                                                <option value='100.000 ~'>100.000 ~</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -155,25 +158,25 @@
                                                         <div class="col-sm-9">
                                                             <div class='form-control-flat'>
                                                                 <label class='radio'>
-                                                                    <input type='radio' name='year_experience' value='0-5' checked="checked">
+                                                                    <input type='radio' name='total_years' value='0-5' checked="checked">
                                                                     <i></i>0-5
                                                                 </label>
                                                             </div>
                                                             <div class='form-control-flat'>
                                                                 <label class='radio'>
-                                                                    <input type='radio' name='year_experience' value='5-10'>
+                                                                    <input type='radio' name='total_years' value='5-10'>
                                                                     <i></i>5-10
                                                                 </label>
                                                             </div>
                                                             <div class='form-control-flat'>
                                                                 <label class='radio'>
-                                                                    <input type='radio' name='year_experience' value='10-20'>
+                                                                    <input type='radio' name='total_years' value='10-20'>
                                                                     <i></i>10-20
                                                                 </label>
                                                             </div>
                                                             <div class='form-control-flat'>
                                                                 <label class='radio'>
-                                                                    <input type='radio' name='year_experience' value='20+'>
+                                                                    <input type='radio' name='total_years' value='20+'>
                                                                     <i></i>20+
                                                                 </label>
                                                             </div>
@@ -234,7 +237,7 @@
                                                     <div class="form-group row">
                                                         <label for="working_hours" class="col-sm-3 control-label">Working Hours</label>
                                                         <div class="col-sm-9">
-                                                            <textarea class="form-control" id="working_hours" name="working_hours" placeholder="" rows="8" ></textarea>
+                                                            <textarea class="form-control" name="working_hours" placeholder="" rows="8" ></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -242,9 +245,9 @@
                                                     <h4>Company Profile</h4>
                                                     <div class="company-profile-form">
                                                         <div class="form-group row">
-                                                            <label for="company_name" class="col-sm-3 control-label">Company Name</label>
+                                                            <label for="companyname" class="col-sm-3 control-label">Company Name</label>
                                                             <div class="col-sm-9">
-                                                                <input type="text" class="form-control" id="company_name" value="" name="company_name" placeholder="Enter your company name">
+                                                                <input type="text" class="form-control"  name="companyname" placeholder="Enter your company name">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
@@ -254,51 +257,51 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
-                                                            <label for="company_desc" class="col-sm-3 control-label">Company Description</label>
+                                                            <label for="company_description" class="col-sm-3 control-label">Company Description</label>
                                                             <div class="col-sm-9">
-                                                                <textarea class="form-control" id="company_desc" name="company_desc" rows="8" placeholder="Enter your company description"></textarea>
+                                                                <textarea class="form-control" id="company_description" name="company_description" rows="8" placeholder="Enter your company description"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label class="col-sm-3 control-label">Company Logo</label>
                                                             <div class="col-sm-9">
-                                                                <input type="file" name="application_attachment" accept=".jpg,.png,.gif">
+                                                                <input type="file" name="cover_image2" accept=".jpg,.png,.gif">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label class="col-sm-3 control-label">Cover Image</label>
                                                             <div class="col-sm-9">
-                                                                <input type="file" name="application_attachment" accept=".jpg,.png,.gif">
+                                                                <input type="file" name="company_logo" accept=".jpg,.png,.gif">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label for="company_googleplus" class="col-sm-3 control-label">Google+</label>
                                                             <div class="col-sm-9">
-                                                                <input type="text" class="form-control" id="company_googleplus" value="" name="company_googleplus" placeholder="http://">
+                                                                <input type="text" class="form-control" value="" name="google" placeholder="http://">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label for="company_facebook" class="col-sm-3 control-label">Facebook</label>
                                                             <div class="col-sm-9">
-                                                                <input type="text" class="form-control" id="company_facebook" value="" name="company_facebook" placeholder="http://">
+                                                                <input type="text" class="form-control" value="" name="facebook" placeholder="http://">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label for="company_linkedin" class="col-sm-3 control-label">LinkedIn</label>
                                                             <div class="col-sm-9">
-                                                                <input type="text" class="form-control" id="company_linkedin" value="" name="company_linkedin" placeholder="http://">
+                                                                <input type="text" class="form-control" value="" name="linkedin" placeholder="http://">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label for="company_twitter" class="col-sm-3 control-label">Twitter</label>
                                                             <div class="col-sm-9">
-                                                                <input type="text" class="form-control" id="company_twitter" value=""  name="company_twitter" placeholder="http://">
+                                                                <input type="text" class="form-control" value=""  name="twitter" placeholder="http://">
                                                             </div>
                                                         </div>
                                                         <div class="form-group  row">
                                                             <label for="company_instagram" class="col-sm-3 control-label">Instagram</label>
                                                             <div class="col-sm-9">
-                                                                <input type="text" class="form-control" id="company_instagram" value="" name="company_instagram" placeholder="http://">
+                                                                <input type="text" class="form-control" value="" name="instagram" placeholder="http://">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -307,10 +310,10 @@
                                         </div>
                                     </div>
                                     <div class="form-actions form-group text-center clearfix">
-                                        <a class="btn btn-primary" href="#">Back</a>
-                                          <button type="button" class="btn btn-primary">Continue</button>
+                                          <button type="submit" class="btn btn-primary">Continue</button>
                                      </div>
                                 </div>
+                                {{csrf_field()}}
                             </form>
                         </div>
                     </div>
@@ -377,5 +380,4 @@
 </footer>
 </div> <!-- /#top.site -->
 <a href="#" class="go-to-top hidden-print"><i class="fa fa-angle-up"></i></a>
-
 @endsection

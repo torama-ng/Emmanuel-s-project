@@ -8,6 +8,15 @@ use App\Http\Controllers\Gate;
 
 class JobFormController extends Controller
 {
+      /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
          /**
@@ -15,7 +24,7 @@ class JobFormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-        $jobs = Jobs::orderBy('created_at','desc')->paginate(3);
+        $jobs = Jobs::orderBy('created_at','desc')->paginate(10);
         return view('jobform.index')->with('jobs', $jobs);
     }
 
@@ -66,16 +75,16 @@ class JobFormController extends Controller
         ));
 
                   // file upload
-                  if($request->hasFile('cover_image')){
-                    $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+                  if($request->hasFile('cover_image','cover_image2','company_logo')){
+                    $fileNameWithExt = $request->file('cover_image','cover_image2','company_logo')->getClientOriginalName();
                     // get file name
                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
                     // get extension
-                    $extension = $request->file('cover_image')->getClientOriginalExtension();
+                    $extension = $request->file('cover_image','cover_image2','company_logo')->getClientOriginalExtension();
         
                     $fileNameToStore = $filename.'_'.time().'.'.$extension;
                     // upload
-                    $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+                    $path = $request->file('cover_image','cover_image2','company_logo')->storeAs('public/cover_images', $fileNameToStore);
                 }
                 else{
                     $fileNameToStore = 'noimage.jpg';
@@ -83,7 +92,7 @@ class JobFormController extends Controller
 
         $job = new Jobs;
         $job->jobtitle = $request->input('jobtitle');
-        $job->company_name = $request->input('company_name');
+        $job->companyname = $request->input('companyname');
         $job->location = $request->input('location');
         $job->jobtype = $request->input('jobtype');
         $job->company_website = $request->input('company_website');
@@ -204,8 +213,10 @@ class JobFormController extends Controller
     public function search(Request $request){
         $search = $request->get('search');
         $location = $request->get('location');
+        $jobtype = $request->get('jobtype');
         $jobs = Jobs::where('jobtitle', 'like', '%'.$search.'%')
                         ->where('location', 'like', '%'.$location.'%')
+                        ->where('jobtype', 'like', '%'.$jobtype.'%')
                         ->paginate(5);
 
        return view('jobform.index', ['jobs' => $jobs]);       

@@ -25,17 +25,17 @@
                                                     <div class="form-group">
                                                         <label class="sr-only">Category</label>
                                                         <div class="advance-search-form-control">
-                                                            <select name="category" class="form-control-chosen form-control">
+                                                            <select name="jobtype" class="form-control-chosen form-control">
                                                                 <option class="text-placeholder" value="">all category</option>
-                                                                <option value="">Customer Service</option>
-                                                                <option value="">Designer</option>
-                                                                <option value="">Developer</option>
-                                                                <option value="">Finance</option>
-                                                                <option value="">Human Resource</option>
-                                                                <option value="">Information Technology</option>
-                                                                <option value="">Marketing</option>
-                                                                <option value="">Others</option>
-                                                                <option value="">Sales</option>
+                                                                <option value="Customer Service">Customer Service</option>
+                                                                <option value="Designer">Designer</option>
+                                                                <option value="Developer">Developer</option>
+                                                                <option value="Finance">Finance</option>
+                                                                <option value="Human Resource">Human Resource</option>
+                                                                <option value="Information Technology">Information Technology</option>
+                                                                <option value="Marketing">Marketing</option>
+                                                                <option value="Others">Others</option>
+                                                                <option value="Sales">Sales</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -44,8 +44,8 @@
                                                         <div class="advance-search-form-control">
                                                             <select name="location" class="form-control-chosen form-control">
                                                                 <option class="text-placeholder" value="">all location</option>
-                                                                <option value="">Amsterdam</option>
-                                                                <option value="">Kuta, Indonesia</option>
+                                                                <option value="Amsterdam">Amsterdam</option>
+                                                                <option value="Kuta, Indonesia">Kuta, Indonesia</option>
                                                             </select>
                                                         </div>
                                                     </div>

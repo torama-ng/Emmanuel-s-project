@@ -37,7 +37,7 @@
                   @if(Auth::check())
                       @if(Auth::user()->user_type === 'candidate')
                       <li class="align-left">
-                        <a href="index">Resumes</a>
+                        <a href="/resume">Resumes</a>
                         <ul class="sub-menu">
                           {{-- <li><a href="home-2">Resume Detail</a></li>
                           <li><a href="Post_resume">Post a resume</a></li> --}}
@@ -81,18 +81,18 @@
                   @if(Auth::check())
                   @if(Auth::user()->user_type === 'employer')
                   
-                  <li><a href="/Resumeform"><i class="fa fa-edit"></i> Post a Resume</a></li>
-                  <li><a href="candidate-manage-resume.html"><i class="fa fa-file-text-o"></i> Manage Resume</a></li>
+                  {{-- <li><a href="/resume/create"><i class="fa fa-edit"></i> Post a Resume</a></li> --}}
+                  <li><a href="candidate-manage-resume.html"><i class="fa fa-file-text-o"></i> Manage Jobs</a></li>
                   <li><a href="candidate-manage-application.html"><i class="fa fa-newspaper-o"></i> Manage Application</a></li>
                   {{-- <li><a href="candidate-job-alert.html"><i class="fa fa-bell-o"></i> Jobs Alert</a></li> --}}
                   <li class="divider" role="presentation"></li>
-                  <li class="current-menu-item"><a href="candidate-my-profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                  <li class="current-menu-item"><a href="/Employer"><i class="fa fa-user"></i> My Profile</a></li>
                   
             
                 
                   @endif
                   @if(Auth::user()->user_type === 'candidate')
-                        <li><a href="/Resume_form"><i class="fa fa-edit"></i> Post a Resume</a></li>
+                        <li><a href="/resume/create"><i class="fa fa-edit"></i> Post a Resume</a></li>
                         <li><a href="candidate-manage-resume.html"><i class="fa fa-file-text-o"></i> Manage Resume</a></li>
                         <li><a href="candidate-manage-application.html"><i class="fa fa-newspaper-o"></i> Manage Application</a></li>
                         {{-- <li><a href="candidate-job-alert.html"><i class="fa fa-bell-o"></i> Jobs Alert</a></li> --}}

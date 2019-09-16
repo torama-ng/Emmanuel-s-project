@@ -25,7 +25,7 @@
 							<li><a href="candidate-bookmark-job.html"><i class="fa fa-heart"></i> Bookmarked Jobs</a></li>
 							<li><a href="candidate-job-alert.html"><i class="fa fa-bell-o"></i> Job Alerts</a></li>
 							<li class="divider" role="presentation"></li>
-							<li class="active"><a href="candidate-my-profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+							<li class="active"><a href="/Candidate"><i class="fa fa-user"></i> My Profile</a></li>
 							<li> <a class="dropdown-item" href="{{ route('logout') }}"
 								onclick="event.preventDefault();
 											  document.getElementById('logout-form').submit();">
