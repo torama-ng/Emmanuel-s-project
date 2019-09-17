@@ -48,6 +48,10 @@ class ResumeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array(
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'specialty' => 'required',
+            'location' => 'required',
             'education_school'=> 'required',
             'education_qualification'=> 'required',
             'education_date'=> 'required',
@@ -61,6 +65,10 @@ class ResumeController extends Controller
         ));
 
         $resume = new Resume;
+        $resume->first_name = $request->input('first_name');
+        $resume->last_name = $request->input('last_name');
+        $resume->specialty = $request->input('specialty');
+        $resume->location = $request->input('location');
         $resume->education_school = $request->input('education_school');
         $resume->education_qualification = $request->input('education_qualification');
         $resume->education_date = $request->input('education_date');
@@ -122,4 +130,16 @@ class ResumeController extends Controller
     {
         //
     }
+    // public function search(Request $request){
+    //     $search = $request->get('search');
+    //     $location = $request->get('location');
+    //     $jobtype = $request->get('jobtype');
+    //     $esumes = Resume::where('specialty', 'like', '%'.$search.'%')
+    //                     ->where('location', 'like', '%'.$location.'%')
+    //                     // ->where('jobtype', 'like', '%'.$jobtype.'%')
+    //                     ->paginate(5);
+
+    //    return view('jobform.index', ['resumes' => $resumes]);       
+
+    // }
 }

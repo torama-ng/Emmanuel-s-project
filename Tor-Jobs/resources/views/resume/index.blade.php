@@ -1,8 +1,12 @@
 @extends('layouts.app')
 @section('content')
-@if (count($resumes) > 0)
+{{-- @if (count($resumes) > 0)
 @foreach ($resumes as $resume)
-{{-- <div class="noo-page-heading">
+@endforeach
+@else
+<h2>no result</h2>
+@endif --}}
+<div class="noo-page-heading">
         <div class="container-boxed max parallax-content">
             <div class="page-heading-info">
                 <h1 class="page-title">Resume Listing </h1>
@@ -29,6 +33,8 @@
                                     </tr>
                                 </thead>
                                 <tbody class="resume_nextajax-wrap">
+                                    @if (count($resumes) > 0)
+                                    @foreach ($resumes as $resume)
                                     <tr>
                                         <td>
                                             <div class="loop-item-wrap">
@@ -39,191 +45,28 @@
                                                 </div>
                                                 <div class="loop-item-content">
                                                     <h2 class="loop-item-title">
-                                                        <a href="resume-detail.html">Suresh Patel</a>
+                                                        <a href="resume-detail.html">{{$resume->first_name}}</a>
                                                     </h2>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
-                                            <a href="#"><strong>Web Developer</strong></a>
+                                        <a href="/resume/{{$resume->id}}"><strong>{{$resume->specialty}}</strong></a>
                                         </td>
                                         <td class="hidden-xs">
-                                            <i class="fa fa-map-marker"></i>&nbsp;<em>india</em>
+                                            <i class="fa fa-map-marker"></i>&nbsp;<em>{{$resume->location}}</em>
                                         </td>
-                                        <td class="hidden-xs"><strong>Designer, Developer</strong></td>
+                                        <td class="hidden-xs"><strong>{{$resume->specialty}}</strong></td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="loop-item-wrap">
-                                                <div class="item-featured">
-                                                    <a href="#">
-                                                        <img alt='' src='images/avatar/user_50x50.jpg' class='photo' height='40' width='40'/>
-                                                    </a>
-                                                </div>
-                                                <div class="loop-item-content">
-                                                    <h2 class="loop-item-title">
-                                                        <a href="resume-detail.html">Cammy</a>
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#"><strong>Front Desk Specialist</strong></a>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-map-marker"></i>&nbsp;<em>Atlanta</em>
-                                        </td>
-                                        <td class="hidden-xs"><strong>Customer Service</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="loop-item-wrap">
-                                                <div class="item-featured">
-                                                    <a href="#">
-                                                        <img alt='' src='images/avatar/user_50x50.jpg' class='photo' height='40' width='40'/>
-                                                    </a>
-                                                </div>
-                                                <div class="loop-item-content">
-                                                    <h2 class="loop-item-title">
-                                                        <a href="resume-detail.html">Bettymesfin</a>
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#"><strong>Web Developer</strong></a>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-map-marker"></i>&nbsp;<em>Atlanta</em>
-                                        </td>
-                                        <td class="hidden-xs"><strong>Information Technology</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="loop-item-wrap">
-                                                <div class="item-featured">
-                                                    <a href="#">
-                                                        <img alt='' src='images/avatar/user_50x50.jpg' class='photo' height='40' width='40'/>
-                                                    </a>
-                                                </div>
-                                                <div class="loop-item-content">
-                                                    <h2 class="loop-item-title">
-                                                        <a href="resume-detail.html">Jane Doe</a>
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#"><strong>Marketing Online</strong></a>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-map-marker"></i>&nbsp;<em>Berlin</em>
-                                        </td>
-                                        <td class="hidden-xs"><strong>Marketing</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="loop-item-wrap">
-                                                <div class="item-featured">
-                                                    <a href="#">
-                                                        <img alt='' src='images/avatar/user_50x50.jpg' class='photo' height='40' width='40'/>
-                                                    </a>
-                                                </div>
-                                                <div class="loop-item-content">
-                                                    <h2 class="loop-item-title">
-                                                        <a href="resume-detail.html">Suresh Patel</a>
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#"><strong>Web Developer</strong></a>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-map-marker"></i>&nbsp;<em>india</em>
-                                        </td>
-                                        <td class="hidden-xs"><strong>Designer, Developer</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="loop-item-wrap">
-                                                <div class="item-featured">
-                                                    <a href="#">
-                                                        <img alt='' src='images/avatar/user_50x50.jpg' class='photo' height='40' width='40'/>
-                                                    </a>
-                                                </div>
-                                                <div class="loop-item-content">
-                                                    <h2 class="loop-item-title">
-                                                        <a href="resume-detail.html">Cammy</a>
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#"><strong>Front Desk Specialist</strong></a>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-map-marker"></i>&nbsp;<em>Atlanta</em>
-                                        </td>
-                                        <td class="hidden-xs"><strong>Customer Service</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="loop-item-wrap">
-                                                <div class="item-featured">
-                                                    <a href="#">
-                                                        <img alt='' src='images/avatar/user_50x50.jpg' class='photo' height='40' width='40'/>
-                                                    </a>
-                                                </div>
-                                                <div class="loop-item-content">
-                                                    <h2 class="loop-item-title">
-                                                        <a href="resume-detail.html">Bettymesfin</a>
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#"><strong>Web Developer</strong></a>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-map-marker"></i>&nbsp;<em>Atlanta</em>
-                                        </td>
-                                        <td class="hidden-xs"><strong>Information Technology</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="loop-item-wrap">
-                                                <div class="item-featured">
-                                                    <a href="#">
-                                                        <img alt='' src='images/avatar/user_50x50.jpg' class='photo' height='40' width='40'/>
-                                                    </a>
-                                                </div>
-                                                <div class="loop-item-content">
-                                                    <h2 class="loop-item-title">
-                                                        <a href="resume-detail.html">Jane Doe</a>
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#"><strong>Marketing Online</strong></a>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <i class="fa fa-map-marker"></i>&nbsp;<em>Berlin</em>
-                                        </td>
-                                        <td class="hidden-xs"><strong>Marketing</strong></td>
-                                    </tr>
+                                    @endforeach
+                                    {{$resumes->links()}}
+                                    @else
+                                    <h2>no result</h2>
+                                    @endif   
                                 </tbody>
                             </table>
                         </div>
-                        <div class="pagination list-center">
-                            <span class='page-numbers current'>1</span>
-                            <a class='page-numbers' href='#'>2</a>
-                            <a class='page-numbers' href='#'>3</a>
-                            <a class="next page-numbers" href="#">
-                                <i class="fa fa-long-arrow-right"></i>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>  
                 <div class="noo-sidebar col-md-4">
@@ -325,67 +168,6 @@
             </div>  
         </div>  
     </div>
-    <div class="colophon wigetized">
-        <div class="container-boxed max">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="widget widget_text">
-                        <h4 class="widget-title">Jobmonster</h4>
-                        <div class="textwidget">
-                            Donec elementum tellus vel magna bibendum, et fringilla metus tristique. Vestibulum cursus venenatis lacus, vel eleifend lectus blandit a.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="widget widget_text">
-                        <h4 class="widget-title">Contact Us</h4>
-                        <div class="textwidget">
-                            <p>
-                                JobMonster Inc.<br/>
-                                54/29 West 21st Street, New York, 10010, USA<br/>
-                                <a href="mailto:email@domain.com">email@domain.com</a><br/>
-                                http://jobmonster.com
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="widget mailchimp-widget">
-                        <h4 class="widget-title">NEWSLETTER</h4>
-                        <form class="mc-subscribe-form">
-                            <label for="email">
-                                Fusce magna tortor, posuere a condimentum ac, vehicula sit amet lorem.
-                            </label>
-                            <div class="mc-email-wrap">
-                                <input type="email" id="email" name="mc_email" class="form-control mc-email" value="" placeholder="Enter your email here..."/>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>  
-        </div>  
-    </div>  
-    <footer class="colophon site-info">
-        <div class="container-full">
-            <div class="footer-more">
-                <div class="container-boxed">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="noo-bottom-bar-content">
-                                © 2015 Jobmonster. Designed with
-                                <i> </i> by NooTheme
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>  
-    </footer>  
-</div>   --}}
-{{$resume}}
 <a href="#" class="go-to-top hidden-print"><i class="fa fa-angle-up"></i></a>
-@endforeach
-@else
-<h2>no result</h2>
-@endif
+
 @endsection

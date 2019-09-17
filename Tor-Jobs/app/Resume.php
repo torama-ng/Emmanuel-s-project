@@ -11,6 +11,10 @@ class Resume extends Model
     public $primaryKey = 'id';
 
     protected $fillable = [
+        'first_name',
+        'last_name',
+        'specialty',
+        'location',
         'education_school',
         'education_qualification',
         'education_date',

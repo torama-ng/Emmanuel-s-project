@@ -310,7 +310,7 @@
                                         </div>
                                     </div>
                                     <div class="form-actions form-group text-center clearfix">
-                                          <button type="submit" class="btn btn-primary">Continue</button>
+                                          <button type="submit" class="btn btn-primary">Submit Job</button>
                                      </div>
                                 </div>
                                 {{csrf_field()}}

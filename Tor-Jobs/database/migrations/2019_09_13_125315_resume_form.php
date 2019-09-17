@@ -15,6 +15,10 @@ class ResumeForm extends Migration
     {
         Schema::create('resume', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('specialty');
+            $table->string('location');
             $table->string('education_school');
             $table->string('education_qualification');
             $table->string('education_date');

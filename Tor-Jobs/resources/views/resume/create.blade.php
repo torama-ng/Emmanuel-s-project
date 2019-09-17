@@ -42,6 +42,37 @@
                                             <div class="jpanel-body">
                                                 <div class="resume-form">
                                                     <div class="resume-form-detail">
+                                                            <div class="form-group">
+                                                                    <label class="col-sm-3 control-label">Details</label>
+                                                            <div class="fields-group noo-addable-fields col-sm-9 noo-metabox-addable">
+                                                            <input type="text" class="form-control" placeholder="first_Name" name='first_name'  />
+                                                            <input type="text" class="form-control" placeholder="last_Name" name='last_name'  />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <label class="col-sm-3 control-label">Location & Specialty</label>
+                                                    <div class="fields-group noo-addable-fields col-sm-9 noo-metabox-addable">
+                                                            <select class="form-control form-control-chosen"  name="specialty" >
+                                                                    <option value="Customer Service">Customer Service</option>
+                                                                    <option value="Designer">Designer</option>
+                                                                    <option value="Developer">Developer</option>
+                                                                    <option value="Finance">Finance</option>
+                                                                    <option value="Human Resource">Human Resource</option>
+                                                                    <option value="Information Technology">Information Technology</option>
+                                                                    <option value="Marketing">Marketing</option>
+                                                                    <option value="Others">Others</option>
+                                                                    <option value="Sales">Sales</option>
+                                                                </select>
+                                                                <select  name="location"  class="form-control form-control-chosen ">
+                                                                        <option value="Bayelsa">Bayelsa</option>
+                                                                        <option value="Rivers">Rivers</option>
+                                                                        <option value="Delta">Delta</option>
+                                                                        <option value="Abuja">Abuja</option>
+                                                                        <option value="Lagos">Lagos</option>
+                                                                        <option value="Uyo">Uyo</option>
+                                                                    </select>
+                                                </div>
+                                            </div>
                                                         <div class="form-group">
                                                             <label class="col-sm-3 control-label">Education</label>
                                                             <div class="col-sm-9">
@@ -79,6 +110,7 @@
                                                                             <textarea class="form-control" id="experience_note" name="experience_note" rows="5" placeholder="Note"></textarea>
                                                                         </div>
                                                                     </div>
+                             
                                                                     <div class="noo-addable-actions">
                                                                         <a href="#" class="noo-clone-fields pull-left">
                                                                             <i class="fa fa-plus-circle text-primary"></i>
@@ -92,6 +124,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                      
                                                         <div class="form-group">
                                                             <label class="col-sm-3 control-label">Summary of Skill</label>
                                                             <div class="col-sm-9">
@@ -99,7 +132,7 @@
                                                                     <div class="noo-addable-fields">
                                                                         <div class="fields-group row">
                                                                             <div class="col-sm-9 col-xs-6">
-                                                                                <input type="text" class="form-control" placeholder="Skill Name" name='skill_name' value="skill_name" />
+                                                                                <input type="text" class="form-control" name='skill_name'  />
                                                                             </div>
                                                                             <div class="col-sm-3 col-xs-6">
                                                                                 <input type="text" class="form-control" name='skill_percent' value="" />
@@ -107,6 +140,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    
                                                                     <div class="noo-addable-actions">
                                                                         <a href="#" class="noo-clone-fields pull-left">
                                                                             <i class="fa fa-plus-circle text-primary"></i>
@@ -126,7 +160,7 @@
                                         </div>
                                         <div class="form-actions form-group text-center clearfix">
                                     
-                                             <button type="submit" class="btn btn-primary">Preview</button>
+                                             <button type="submit" class="btn btn-primary">Submit Resume</button>
                                          </div>
                                     </div>
                                     {{csrf_field()}}
