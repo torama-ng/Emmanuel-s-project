@@ -67,8 +67,8 @@
                             <div class="col-sm-6">
                                     <select class="user_role form-control @error('user_type') is-invalid @enderror" name="user_type" required>
                                         <option value="">-Select-</option>
-                                        <option value="employer">I&#039;employer</option>
-                                        <option value="candidate">I&#039;candidate</option>
+                                        <option value="employer">Employer</option>
+                                        <option value="candidate">Candidate</option>
                                     </select>
                                     @error('user_type')
                                     <span class="invalid-feedback" role="alert">
