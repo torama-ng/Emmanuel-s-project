@@ -48,8 +48,12 @@ class ResumeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array(
-            'first_name' => 'required',
-            'last_name' => 'required',
+            'title' => 'required',
+            'desc' => 'required',
+            'attachment' => 'image|nullable|max:1999',
+            'language' => 'required',
+            'highest_degree' => 'required',
+            'experience_year' => 'required',
             'specialty' => 'required',
             'location' => 'required',
             'education_school'=> 'required',
@@ -64,9 +68,29 @@ class ResumeController extends Controller
             'skill_percent'=> 'required',
         ));
 
+           // file upload
+           if($request->hasFile('attachment')){
+            $fileNameWithExt = $request->file('attachment')->getClientOriginalName();
+            // get file name
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            // get extension
+            $extension = $request->file('attachment')->getClientOriginalExtension();
+
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            // upload
+            $path = $request->file('attachment')->storeAs('public/resume_images', $fileNameToStore);
+        }
+        else{
+            $fileNameToStore = 'noimage.jpg';
+        }
+
+
         $resume = new Resume;
-        $resume->first_name = $request->input('first_name');
-        $resume->last_name = $request->input('last_name');
+        $resume->title = $request->input('title');
+        $resume->desc = $request->input('desc');
+        $resume->language = $request->input('language');
+        $resume->highest_degree = $request->input('highest_degree');
+        $resume->experience_year = $request->input('experience_year');
         $resume->specialty = $request->input('specialty');
         $resume->location = $request->input('location');
         $resume->education_school = $request->input('education_school');
@@ -79,7 +103,9 @@ class ResumeController extends Controller
         $resume->experience_note = $request->input('experience_note');
         $resume->skill_name = $request->input('skill_name');
         $resume->skill_percent = $request->input('skill_percent');
-        // $resume->user_id = auth()->save()->id;
+        $resume->attachment = $fileNameToStore;
+        $resume->user_id = auth()->user()->name;
+        $resume->user_email = auth()->user()->email;
         $resume->save();
 
         return redirect('/resume')->with('success', 'Resume Successfully Created');

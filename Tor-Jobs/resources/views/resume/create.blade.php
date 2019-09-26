@@ -34,45 +34,113 @@
     
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+                                   
+                                                                
+                                                                    <div class="jstep-content">
+                                                                        <div class="jpanel jpanel-resume-form">
+                                                                            <div class="jpanel-title">
+                                                                                <h3>General Information</h3>
+                                                                            </div>
+                                                                            <div class="jpanel-body">
+                                                                                <div class="resume-candidate-profile">
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-3 profile-avatar">
+                                                                                            <img alt='' src='images/avatar/user_160x160.jpg' height='160' width='160' />
+                                                                                        </div>
+                                                                                    
+                                                                                           
+                                                                                    <hr/>
+                                                                                    <div class="resume-form">
+                                                                                        <div class="resume-form-general row">
+                                                                                            <div class="col-sm-7">
+                                                                                                   
+                                                                                                <div class="form-group">
+                                                                                                    <label for="title" class="col-sm-5 control-label">Resume Title</label>
+                                                                                                    <div class="col-sm-7">
+                                                                                                        <input type="text" value="" class="form-control" id="title" name="title" autofocus required>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group">
+                                                                                                    <label for="language" class="col-sm-5 control-label">Language</label>
+                                                                                                    <div class="col-sm-7">
+                                                                                                        <input type="text" value="" class="form-control"  id="language" name="language" placeholder="Your working language">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group">
+                                                                                                    <label for="highest_degree" class="col-sm-5 control-label">Highest Degree Level</label>
+                                                                                                    <div class="col-sm-7">
+                                                                                                        <input type="text" class="form-control"  id="highest_degree"  name="highest_degree" placeholder="eg. &quot;Bachelor Degree&quot;">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group">
+                                                                                                    <label for="experience_year" class="col-sm-5 control-label">Total Year Experience</label>
+                                                                                                    <div class="col-sm-7">
+                                                                                                        <input type="text" class="form-control"  id="experience_year"  name="experience_year" placeholder="eg. &quot;1&quot;, &quot;2&quot;" >
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group">
+                                                                                                    <label for="job_category" class="col-sm-5 control-label">Job Category</label>
+                                                                                                    <div class="col-sm-7">
+                                                                                                        <select class="form-control form-control-chosen" name="specialty"  >
+                                                                                                            <option value="Customer Service">Customer Service</option>
+                                                                                                            <option value="Designer">Designer</option>
+                                                                                                            <option value="Developer">Developer</option>
+                                                                                                            <option value="Finance">Finance</option>
+                                                                                                            <option value="Human Resource">Human Resource</option>
+                                                                                                            <option value="Information Technology">Information Technology</option>
+                                                                                                            <option value="Marketing">Marketing</option>
+                                                                                                            <option value="Others">Others</option>
+                                                                                                            <option value="Sales">Sales</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group">
+                                                                                                    <label for="job_level" class="col-sm-5 control-label">Expected Job Level</label>
+                                                                                                    <div class="col-sm-7">
+                                                                                                        <input type="text" class="form-control" id="job_level" name="job_level" placeholder="eg. &quot;Junior&quot;, &quot;Senior&quot;">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group">
+                                                                                                    <label for="job_location" class="col-sm-5 control-label">Job Location</label>
+                                                                                                    <div class="col-sm-7">
+                                                                                                        <select id="location" name="location" multiple class="form-control form-control-chosen" data-placeholder="Select Locations">
+                                                                                                            <option value="">&nbsp;</option>
+                                                                                                            <option value="Bayelsa">Bayelsa</option>
+                                                                                                            <option value="Rivers">Rivers</option>
+                                                                                                            <option value="Delta">Delta</option>
+                                                                                                            <option value="Abuja">Abuja</option>
+                                                                                                            <option value="Lagos">Lagos</option>
+                                                                                                            <option value="Uyo">Uyo</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-sm-5">
+                                                                                                <label for="file_cv" class="control-label">Upload your Attachment</label>
+                                                                                                <div class="upload-to-cv clearfix">
+                                                                                                    <input id="file_cv" type="file" name="attachment"  accept=".jpg,.png,.gif">
+                                                                                                    <p class="help-block">Allowed file: image,doc,docx,pdf</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-sm-5">
+                                                                                                <label for="desc" class="control-label">Introduce Yourself</label>
+                                                                                                <textarea class="form-control" id="desc" name="desc" rows="14" placeholder="Describe your resume in a few paragraphs"></textarea>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                
+                                                    
+
+
+
                                     <div class="jstep-content">
-                                        <div class="jpanel jpanel-resume-form">
-                                            <div class="jpanel-title">
-                                                <h3>Resume Detail</h3>
-                                            </div>
                                             <div class="jpanel-body">
                                                 <div class="resume-form">
                                                     <div class="resume-form-detail">
-                                                            <div class="form-group">
-                                                                    <label class="col-sm-3 control-label">Details</label>
-                                                            <div class="fields-group noo-addable-fields col-sm-9 noo-metabox-addable">
-                                                            <input type="text" class="form-control" placeholder="first_Name" name='first_name'  />
-                                                            <input type="text" class="form-control" placeholder="last_Name" name='last_name'  />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                            <label class="col-sm-3 control-label">Location & Specialty</label>
-                                                    <div class="fields-group noo-addable-fields col-sm-9 noo-metabox-addable">
-                                                            <select class="form-control form-control-chosen"  name="specialty" >
-                                                                    <option value="Customer Service">Customer Service</option>
-                                                                    <option value="Designer">Designer</option>
-                                                                    <option value="Developer">Developer</option>
-                                                                    <option value="Finance">Finance</option>
-                                                                    <option value="Human Resource">Human Resource</option>
-                                                                    <option value="Information Technology">Information Technology</option>
-                                                                    <option value="Marketing">Marketing</option>
-                                                                    <option value="Others">Others</option>
-                                                                    <option value="Sales">Sales</option>
-                                                                </select>
-                                                                <select  name="location"  class="form-control form-control-chosen ">
-                                                                        <option value="Bayelsa">Bayelsa</option>
-                                                                        <option value="Rivers">Rivers</option>
-                                                                        <option value="Delta">Delta</option>
-                                                                        <option value="Abuja">Abuja</option>
-                                                                        <option value="Lagos">Lagos</option>
-                                                                        <option value="Uyo">Uyo</option>
-                                                                    </select>
-                                                </div>
-                                            </div>
                                                         <div class="form-group">
                                                             <label class="col-sm-3 control-label">Education</label>
                                                             <div class="col-sm-9">
@@ -171,7 +239,7 @@
                 </div>  
             </div> 
         </div> 
-    </div>
+    
     <div class="colophon wigetized">
         <div class="container-boxed max">
             <div class="row">

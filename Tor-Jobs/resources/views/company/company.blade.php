@@ -1,7 +1,6 @@
+
 @extends('layouts.app')
 @section('content')
-    
-
 <div class="site">
         <div class="noo-page-heading">
             <div class="container-boxed max parallax-content">
@@ -49,275 +48,22 @@
                         <div class="masonry">
                             <ul class="companies-overview masonry-container">
                                 <li class="company-group masonry-item">
-                                    <div id="A" class="company-letter text-primary">A</div>
+                                  
                                     <ul>
-                                        <li class="company-name"><a href="#">AAA (0)</a></li>
-                                        <li class="company-name"><a href="#">AXN Compnay (0)</a></li>
-                                        <li class="company-name"><a href="#">ABC Corp (0)</a></li>
-                                        <li class="company-name"><a href="#">AbotKaya.ph (0)</a></li>
-                                        <li class="company-name"><a href="#">ACME Jobs Board (0)</a></li>
-                                        <li class="company-name"><a href="#">Alex&#039;s Company (0)</a></li>
-                                        <li class="company-name"><a href="#">Alexan VietNam (0)</a></li>
-                                        <li class="company-name"><a href="#">Alvera Agency (0)</a></li>
-                                        <li class="company-name"><a href="#">Apple (0)</a></li>
-                                        <li class="company-name"><a href="#">Appointro (0)</a></li>
-                                        <li class="company-name"><a href="#">Archangel Systems, S.A. (0)</a></li>
-                                        <li class="company-name"><a href="#">ARS SEMMA (0)</a></li>
-                                        <li class="company-name"><a href="#">Asrama (0)</a></li>
-                                        <li class="company-name"><a href="#">Automattic, Inc. (0)</a></li>
-                                        <li class="company-name"><a href="#">AXIDÉALx (0)</a></li>
+                                            @if(count($jobs) > 0)
+                                            @foreach ($jobs as $job)
+                                    <li class="company-name"><a href="/jobform/{{$job->id}}"> {{$job->companyname}}</a></li>
+                                            @endforeach
+                                                
+                                            @else
+                                            <h2>nothing</h2>    
+                                            @endif
+                                            
+                                        
+                                       
                                     </ul>
                                 </li>
-                                <li class="company-group masonry-item">
-                                    <div id="B" class="company-letter text-primary">B</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Bacon (0)</a></li> 
-                                        <li class="company-name"><a href="#">Beach Road Girls (0)</a></li> 
-                                        <li class="company-name"><a href="#">Beki plc (0)</a></li> 
-                                        <li class="company-name"><a href="#">Big Content Company (0)</a></li> 
-                                        <li class="company-name"><a href="#">Biktahai (0)</a></li> 
-                                        <li class="company-name"><a href="#">BM of North America (2)</a></li> 
-                                        <li class="company-name"><a href="#">Bmk studios (0)</a></li> 
-                                        <li class="company-name"><a href="#">Bobs (0)</a></li> 
-                                        <li class="company-name"><a href="#">Boostrap Freelancer (0)</a></li> 
-                                        <li class="company-name"><a href="#">Btech (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="C" class="company-letter text-primary">C</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Catholic Job Market (0)</a></li> 
-                                        <li class="company-name"><a href="#">Chennai (0)</a></li> 
-                                        <li class="company-name"><a href="#">Christian Translations (0)</a></li> 
-                                        <li class="company-name"><a href="#">Company (0)</a></li> 
-                                        <li class="company-name"><a href="#">Company Hoyee (0)</a></li> 
-                                        <li class="company-name"><a href="#">CORPORACION SOLUTION PERU SAC (0)</a></li> 
-                                        <li class="company-name"><a href="#">Creative Inc. (2)</a></li> 
-                                        <li class="company-name"><a href="#">Crestmedia (0)</a></li> 
-                                        <li class="company-name"><a href="#">Cyber Informatica (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="D" class="company-letter text-primary">D</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Dev Pro (0)</a></li> 
-                                        <li class="company-name"><a href="#">Dezyn (0)</a></li> 
-                                        <li class="company-name"><a href="#">DG (0)</a></li> 
-                                        <li class="company-name"><a href="#">Diageo Inc (0)</a></li> 
-                                        <li class="company-name"><a href="#">Dre electronics (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="E" class="company-letter text-primary">E</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Ebooks (0)</a></li> 
-                                        <li class="company-name"><a href="#">EGOgc (0)</a></li> 
-                                        <li class="company-name"><a href="#">Elink Inc. (1)</a></li> 
-                                        <li class="company-name"><a href="#">Employer Tester (0)</a></li> 
-                                        <li class="company-name"><a href="#">Empresa (0)</a></li> 
-                                        <li class="company-name"><a href="#">Empresas pepito (0)</a></li> 
-                                        <li class="company-name"><a href="#">Envato Inc. (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="F" class="company-letter text-primary">F</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Fakeness (0)</a></li> 
-                                        <li class="company-name"><a href="#">Fantasi Job (0)</a></li> 
-                                        <li class="company-name"><a href="#">Fode company SA (0)</a></li> 
-                                        <li class="company-name"><a href="#">Freelance JOBs (0)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="G" class="company-letter text-primary">G</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">GFG Consulting (0)</a></li> 
-                                        <li class="company-name"><a href="#">GFYS Inc (0)</a></li> 
-                                        <li class="company-name"><a href="#">Google (0)</a></li> 
-                                        <li class="company-name"><a href="#">Grand Artos Hotel (0)</a></li> 
-                                        <li class="company-name"><a href="#">GruzinKo (0)</a></li> 
-                                        <li class="company-name"><a href="#">Gulab Jaman Dai (0)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="H" class="company-letter text-primary">H</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Hallao (0)</a></li> 
-                                        <li class="company-name"><a href="#">Handhome (0)</a></li> 
-                                        <li class="company-name"><a href="#">Hodoriser (0)</a></li> 
-                                        <li class="company-name"><a href="#">HUSSEN (0)</a></li> 
-                                        <li class="company-name"><a href="#">Hymalyas Inc. (3)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="I" class="company-letter text-primary">I</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">IASO Lite (0)</a></li> 
-                                        <li class="company-name"><a href="#">ID Africa Limited (0)</a></li> 
-                                        <li class="company-name"><a href="#">IDPLC (0)</a></li> 
-                                        <li class="company-name"><a href="#">Ingenious (0)</a></li> 
-                                        <li class="company-name"><a href="#">IOS Development Company (0)</a></li> 
-                                        <li class="company-name"><a href="#">IT Respaldo (0)</a></li> 
-                                        <li class="company-name"><a href="#">IT Solution (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="J" class="company-letter text-primary">J</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Jankosoft (0)</a></li> 
-                                        <li class="company-name"><a href="#">JavaWork (0)</a></li> 
-                                        <li class="company-name"><a href="#">JK Communications (0)</a></li> 
-                                        <li class="company-name"><a href="#">Jkl Info (0)</a></li> 
-                                        <li class="company-name"><a href="#">JOb Mansion (0)</a></li> 
-                                        <li class="company-name"><a href="#">Jobbatam (0)</a></li> 
-                                        <li class="company-name"><a href="#">Jobmonster (0)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="K" class="company-letter text-primary">K</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Klaus Company (0)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="L" class="company-letter text-primary">L</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Lorven it solutions (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="M" class="company-letter text-primary">M</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Maak (0)</a></li> 
-                                        <li class="company-name"><a href="#">Magic Mayo (0)</a></li> 
-                                        <li class="company-name"><a href="#">Majem (0)</a></li> 
-                                        <li class="company-name"><a href="#">Masterminds Solutions (0)</a></li> 
-                                        <li class="company-name"><a href="#">MD Creations (0)</a></li> 
-                                        <li class="company-name"><a href="#">Mercy (0)</a></li> 
-                                        <li class="company-name"><a href="#">Mi compañia (0)</a></li> 
-                                        <li class="company-name"><a href="#">Michael Inc. (0)</a></li> 
-                                        <li class="company-name"><a href="#">Microsoftt (0)</a></li> 
-                                        <li class="company-name"><a href="#">Mindtree (0)</a></li> 
-                                        <li class="company-name"><a href="#">MojoIT (0)</a></li> 
-                                        <li class="company-name"><a href="#">Moneybank (0)</a></li> 
-                                        <li class="company-name"><a href="#">MoveyGroup (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="N" class="company-letter text-primary">N</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Nambiti (0)</a></li> 
-                                        <li class="company-name"><a href="#">NGOC SON (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="O" class="company-letter text-primary">O</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Oil and Gas Jobvacancy (0)</a></li> 
-                                        <li class="company-name"><a href="#">Onestopops (0)</a></li> 
-                                        <li class="company-name"><a href="#">Opensoft (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="P" class="company-letter text-primary">P</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">PAL Info System (0)</a></li> 
-                                        <li class="company-name"><a href="#">Parlak Interior Design (0)</a></li> 
-                                        <li class="company-name"><a href="#">Patrick Ubuane Collection (0)</a></li> 
-                                        <li class="company-name"><a href="#">Pepper Inc. (1)</a></li> 
-                                        <li class="company-name"><a href="#">Phubia mining (0)</a></li> 
-                                        <li class="company-name"><a href="#">Polar Design Group (1)</a></li> 
-                                        <li class="company-name"><a href="#">Precision Techin (0)</a></li> 
-                                        <li class="company-name"><a href="#">Precision Techinology PVT LTD (0)</a></li> 
-                                        <li class="company-name"><a href="#">Premium Inc. (2)</a></li> 
-                                        <li class="company-name"><a href="#">PT ada aja (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="Q" class="company-letter text-primary">Q</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Qedar SA (0)</a></li> 
-                                        <li class="company-name"><a href="#">Quantum creative indonesi (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="R" class="company-letter text-primary">R</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Ratna Industries (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="S" class="company-letter text-primary">S</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Sairam Technologies (0)</a></li> 
-                                        <li class="company-name"><a href="#">SDIS (0)</a></li> 
-                                        <li class="company-name"><a href="#">Simonis SPRL (0)</a></li> 
-                                        <li class="company-name"><a href="#">Skilled home soft (0)</a></li> 
-                                        <li class="company-name"><a href="#">SLAVE Holding (0)</a></li> 
-                                        <li class="company-name"><a href="#">Smart Choices (0)</a></li> 
-                                        <li class="company-name"><a href="#">SribuHotels (0)</a></li> 
-                                        <li class="company-name"><a href="#">Suyes (0)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="T" class="company-letter text-primary">T</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Talent scout Management Solutions Private Limited (0)</a></li>
-                                        <li class="company-name"><a href="#">TCONSULTING (0)</a></li> 
-                                        <li class="company-name"><a href="#">Tech Mahindra (0)</a></li> 
-                                        <li class="company-name"><a href="#">Tech-Inc (0)</a></li> 
-                                        <li class="company-name"><a href="#">TechCrunch (0)</a></li> 
-                                        <li class="company-name"><a href="#">Technobrix (0)</a></li> 
-                                        <li class="company-name"><a href="#">The Music Binge (0)</a></li> 
-                                        <li class="company-name"><a href="#">The pionner tech (0)</a></li> 
-                                        <li class="company-name"><a href="#">The Work Exchange (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="U" class="company-letter text-primary">U</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Unikonsultoria (0)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="V" class="company-letter text-primary">V</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Vertice (0)</a></li> 
-                                        <li class="company-name"><a href="#">VigVagas (0)</a></li> 
-                                        <li class="company-name"><a href="#">Villa Senang (1)</a></li> 
-                                        <li class="company-name"><a href="#">Vincom Group (1)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="W" class="company-letter text-primary">W</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">WebCRM (0)</a></li> 
-                                        <li class="company-name"><a href="#">WEP (0)</a></li> 
-                                        <li class="company-name"><a href="#">Wild West Company (4)</a></li> 
-                                        <li class="company-name"><a href="#">World Cloud Systems (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="X" class="company-letter text-primary">X</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Xenia (0)</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="Y" class="company-letter text-primary">Y</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">Yoyo (0)</a></li> 
-                                        <li class="company-name"><a href="#">Yummy (0)</a></li> 
-                                        <li class="company-name"><a href="#">Yuotube (0)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="company-group masonry-item">
-                                    <div id="Z" class="company-letter text-primary">Z</div>
-                                    <ul>
-                                        <li class="company-name"><a href="#">ZapStich (0)</a></li> 
-                                        <li class="company-name"><a href="#">Zaragoza de Guadalajara (0)</a></li> 
-                                    </ul>
-                                </li>
+                              
                             </ul>
                         </div>
                     </div>
@@ -327,20 +73,26 @@
                                 <h3 class="widget-title">Search</h3>
                                 <form class="form-horizontal noo-job-search">
                                     <label class="sr-only" for="s">Search for:</label>
-                                    <input type="search" id="s" class="form-control" placeholder="Search Job&hellip;" value="" name="s" title="Search for:"/>
-                                    <input type="submit" class="hidden"/>
+                                    <input type="search" id="s" class="form-control" placeholder="Search Job&hellip;" value="" name="search" title="Search for:"/>
+                                    <div class="form-group form-action">
+                                            <button type="submit" class="btn btn-primary btn-search-submit">Search</button>
+                                        </div>
                                 </form>
                             </div>
                             <div class="widget noo-job-count-widget">
                                 <ul>
+                                        {{-- @if(count($jobs) > 0) --}}
+                                        {{-- @foreach ($jobs as $job) --}}
                                     <li>
                                         <a href="#">Companies</a>
-                                        <p class="jobs-count">329</p>
+                                        <p class="jobs-count">{{$jobs->count()}}</p>
                                     </li>
-                                    <li>
-                                        <a href="#">Available Jobs</a>
-                                        <p class="jobs-count">18</p></li>
-                                    </ul>
+                                    {{-- @endforeach --}}
+                                                
+                                    {{-- @else
+                                    <h2>nothing</h2>    
+                                    @endif --}}
+                                    
                                 </div>
                             </div>
                     </div>

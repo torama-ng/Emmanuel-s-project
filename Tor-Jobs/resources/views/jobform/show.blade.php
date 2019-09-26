@@ -5,7 +5,7 @@
 <div class="noo-page-heading">
     <div class="container-boxed max parallax-content">
         <div class="page-heading-info">
-            <h1 class="page-title">{{$job->jobtitle}}<span class="count">1418 views</span> </h1>
+            <h1 class="page-title">{{$job->jobtitle}}</h1>
         </div>
         <div class="page-sub-heading-info">
             <p class="content-meta">

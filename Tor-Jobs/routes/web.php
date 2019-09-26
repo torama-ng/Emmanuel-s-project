@@ -25,8 +25,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('jobform', 'JobFormController');
 Route::get('/search', 'JobFormController@search');
-Route::get('/company', 'PagesController@company');
-Route::get('/company-details', 'PagesController@details');
+Route::get('/search', 'CompanyController@search');
+Route::get('/company', 'CompanyController@index');
 Route::get('/blog','PagesController@blog');
 Route::get('/blog-details','PagesController@blog_details');
 Route::get('/map','PagesController@resume_map');
@@ -37,8 +37,18 @@ Route::get('/Candidate', function(){
 Route::get('/Employer', function(){
     return view('Profiles.Employer.employer');
 });
+Route::get('/Profile','ProfileController@index');
 // Route::get('/Resume_form', function(){
 //     return view('resume.create');
 // });
 Route::resource('resume','ResumeController');
+
+// view composer
+View::composer(['*'], function($view){
+
+    // $job = Jobs::find($id);
+    // $view->with('job',$job);
+    // $user = Auth::user();
+    // $view->with('user',$user);
+});
 

@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Resume;
 class PagesController extends Controller
 {
-    public function company(){
-        return view('company.company');
-    }
+  
     public function details(){
         return view('company.company-details');
     }
@@ -30,7 +28,11 @@ class PagesController extends Controller
         return view('resume.home-2');
     }
     public function Candidate_profile(){
-        return view('Profiles.Candidate.candidate-my-profile');
+        $user_id = auth()->user('id');
+         $user = User::find($user_id);
+         $resumes = Resume::orderBy('created_at','desc')->paginate(3);
+
+        return view('Profiles.Candidate.candidate-my-profile')->with('resumes', $user->resumes);
     }
     public function employer_profile(){
         return view('Profiles.Employer.employer');

@@ -11,8 +11,7 @@ class Resume extends Model
     public $primaryKey = 'id';
 
     protected $fillable = [
-        'first_name',
-        'last_name',
+        
         'specialty',
         'location',
         'education_school',
@@ -28,4 +27,8 @@ class Resume extends Model
     ];
 
     public $timestamps = true;
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

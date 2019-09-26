@@ -30,6 +30,7 @@
                                         <th>Resume Title</th>
                                         <th class="hidden-xs">Location</th>
                                         <th class="hidden-xs">Category</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody class="resume_nextajax-wrap">
@@ -40,23 +41,29 @@
                                             <div class="loop-item-wrap">
                                                 <div class="item-featured">
                                                     <a href="#">
-                                                        <img alt='' src='images/avatar/user_50x50.jpg' class='photo' height='40' width='40'/>
+                                                        <img alt='' src='/storage/resume_images/{{$resume->attachment}}' class='photo' height='40' width='40'/>
                                                     </a>
                                                 </div>
                                                 <div class="loop-item-content">
                                                     <h2 class="loop-item-title">
-                                                        <a href="resume-detail.html">{{$resume->first_name}}</a>
+                                                        <a href="resume-detail.html">{{$resume->user_id}}</a>
                                                     </h2>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
-                                        <a href="/resume/{{$resume->id}}"><strong>{{$resume->specialty}}</strong></a>
+                                        <a href="/resume/{{$resume->id}}"><strong>{{$resume->title}}</strong></a>
                                         </td>
+                                        
                                         <td class="hidden-xs">
                                             <i class="fa fa-map-marker"></i>&nbsp;<em>{{$resume->location}}</em>
                                         </td>
                                         <td class="hidden-xs"><strong>{{$resume->specialty}}</strong></td>
+                                    <td>
+                                    <a href="/resume/{{$resume->id}}">
+                                        <button class="btn btn-primary">view</button>
+                                    </a>    
+                                    </td>
                                     </tr>
                                     @endforeach
                                     {{$resumes->links()}}

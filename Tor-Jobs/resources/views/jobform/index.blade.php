@@ -59,16 +59,12 @@
                 </div>
               </article>
               @endforeach
-              {{$jobs->links()}}
               @else
               <h2>No Job Found</h2>
               @endif
-              
-              
-             
             </div>
             <div class="loadmore-action">
-              <a href="#" class="btn btn-default btn-block btn-loadmore">Load More</a>
+                {{$jobs->links()}}
             </div>
           </div>
         </div>  

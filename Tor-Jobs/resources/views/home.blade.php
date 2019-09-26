@@ -20,7 +20,7 @@
                                                 <div class="job-advanced-search-form">
                                                     <div class="form-group">
                                                         <label class="sr-only" for="search-keyword">keyword</label>
-                                                        <input type="text" name="search" class="form-control" id="search-keyword" name="s" placeholder="keyword" value="">
+                                                        <input type="text" name="search" class="form-control" id="search-keyword"  placeholder="keyword" value="">
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="sr-only">Category</label>
